@@ -1,0 +1,30 @@
+D:\BSM Project\Obj_Bitas\bin\Debug\Obj_Bitas.dll
+D:\BSM Project\Obj_Bitas\bin\Debug\Obj_Bitas.pdb
+D:\BSM Project\Obj_Bitas\obj\Debug\Obj_Bitas.dll
+D:\BSM Project\Obj_Bitas\obj\Debug\Obj_Bitas.pdb
+E:\Backup\BSM_BANHANG\BSM Project\Obj_Bitas\bin\Debug\Obj_Bitas.dll
+E:\Backup\BSM_BANHANG\BSM Project\Obj_Bitas\bin\Debug\Obj_Bitas.pdb
+E:\Backup\BSM_BANHANG\BSM Project\Obj_Bitas\obj\Debug\Obj_Bitas.dll
+E:\Backup\BSM_BANHANG\BSM Project\Obj_Bitas\obj\Debug\Obj_Bitas.pdb
+E:\Backup\BSM_BANHANG\BSM Project\Obj_Bitas\obj\Debug\Obj_Bitas.csprojResolveAssemblyReference.cache
+D:\POS HOI CHO\POS\Obj_Bitas\obj\Debug\Obj_Bitas.pdb
+E:\POS HOI CHO\POS\Obj_Bitas\obj\Debug\Obj_Bitas.pdb
+E:\POS HOI CHO\POS\Obj_Bitas\bin\Debug\Obj_Bitas.dll
+E:\POS HOI CHO\POS\Obj_Bitas\bin\Debug\Obj_Bitas.pdb
+E:\POS HOI CHO\POS\Obj_Bitas\obj\Debug\Obj_Bitas.dll
+E:\POS HOI CHO\POS\Obj_Bitas\obj\Debug\Obj_Bitas.csprojResolveAssemblyReference.cache
+E:\POS\Obj_Bitas\bin\Debug\Obj_Bitas.dll
+E:\POS\Obj_Bitas\bin\Debug\Obj_Bitas.pdb
+E:\POS\Obj_Bitas\obj\Debug\Obj_Bitas.dll
+E:\POS\Obj_Bitas\obj\Debug\Obj_Bitas.pdb
+E:\POS\Obj_Bitas\obj\Debug\Obj_Bitas.csprojResolveAssemblyReference.cache
+D:\TONG HOP BSM\POS\Obj_Bitas\bin\Debug\Obj_Bitas.dll
+D:\TONG HOP BSM\POS\Obj_Bitas\bin\Debug\Obj_Bitas.pdb
+D:\TONG HOP BSM\POS\Obj_Bitas\obj\Debug\Obj_Bitas.dll
+D:\TONG HOP BSM\POS\Obj_Bitas\obj\Debug\Obj_Bitas.pdb
+D:\TONG HOP BSM\POS\Obj_Bitas\obj\Debug\Obj_Bitas.csprojResolveAssemblyReference.cache
+D:\WORK\POS BSM\Obj_Bitas\bin\Debug\Obj_Bitas.dll
+D:\WORK\POS BSM\Obj_Bitas\bin\Debug\Obj_Bitas.pdb
+D:\WORK\POS BSM\Obj_Bitas\obj\Debug\Obj_Bitas.csprojResolveAssemblyReference.cache
+D:\WORK\POS BSM\Obj_Bitas\obj\Debug\Obj_Bitas.dll
+D:\WORK\POS BSM\Obj_Bitas\obj\Debug\Obj_Bitas.pdb

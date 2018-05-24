@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DBEFE8C5-469F-4672-BA4F-76DCCF9DD8CC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Obj_Bitas</RootNamespace>
+    <AssemblyName>Obj_Bitas</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel.Selectors" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Obj_Bitas\KeysList_DH_DonHang_H.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DH_DonHang_L.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DH_KhachHangMua.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DH_LoaiDH.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DH_SPMua.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DH_TrangThai.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_Ban.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_HeThong.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_LoaiKH.cs" />
+    <Compile Include="Obj_Bitas\KeysList_HT_NguoiDung_CuaHang.cs" />
+    <Compile Include="Obj_Bitas\KeysList_HT_TruSo.cs" />
+    <Compile Include="Obj_Bitas\KeysList_KH_LoaiNX.cs" />
+    <Compile Include="Obj_Bitas\KeysList_KH_NhapTu.cs" />
+    <Compile Include="Obj_Bitas\KeysList_KH_PhieuNhap_H.cs" />
+    <Compile Include="Obj_Bitas\KeysList_KH_PhieuNhap_L.cs" />
+    <Compile Include="Obj_Bitas\KeysList_KH_PhieuNXKhac_H.cs" />
+    <Compile Include="Obj_Bitas\KeysList_KH_PhieuNXKhac_L.cs" />
+    <Compile Include="Obj_Bitas\KeysList_KH_PhieuXuat_H.cs" />
+    <Compile Include="Obj_Bitas\KeysList_KH_PhieuYC_H.cs" />
+    <Compile Include="Obj_Bitas\KeysList_KH_PhieuYC_L.cs" />
+    <Compile Include="Obj_Bitas\KeysList_Phanquyen.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DA_ChietKhau_Footer.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DA_Chietkhau_SetFormula.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_BangGia.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_BoSuuTap.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_ChietKhau.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_ChiNhanh.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_ChucNang.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_ChungLoai.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_DoiTuong.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_DongSP.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_DonViTien.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_DonViTinh.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_DuLieu.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_KhachHang.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_Kho.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_KhuVuc.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_LoaiCK.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_LoaiHang.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_Mau.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_NhaCungCap.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_NhomSize_Dong.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_NhomSize_H.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_NhomSize_L.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_SanPham.cs" />
+    <Compile Include="Obj_Bitas\KeysList_DM_TinhTP.cs" />
+    <Compile Include="Obj_Bitas\KeysList_HT_DuLieuChucNang.cs" />
+    <Compile Include="Obj_Bitas\KeysList_HT_LichSuDangNhap.cs" />
+    <Compile Include="Obj_Bitas\KeysList_HT_NguoiDung.cs" />
+    <Compile Include="Obj_Bitas\KeysList_HT_NhomNguoiDung.cs" />
+    <Compile Include="Obj_Bitas\KeysList_HT_PhanQuyenDuLieu.cs" />
+    <Compile Include="Obj_Bitas\KeysList_HT_PhienBan.cs" />
+    <Compile Include="Obj_Bitas\KeysList_KH_KeHoachCK_H.cs" />
+    <Compile Include="Obj_Bitas\KeysList_KH_KeHoachCK_L.cs" />
+    <Compile Include="Obj_Bitas\KeysList_KH_PhieuDNXuat_H.cs" />
+    <Compile Include="Obj_Bitas\KeysList_KH_PhieuDN_L.cs" />
+    <Compile Include="Obj_Bitas\KeysList_KH_PhieuXuat_CK.cs" />
+    <Compile Include="Obj_Bitas\KeysList_KH_PhieuXuat_L.cs" />
+    <Compile Include="Obj_Bitas\KeysList_POS_BanHang_H.cs" />
+    <Compile Include="Obj_Bitas\KeysList_POS_BanHang_L.cs" />
+    <Compile Include="Obj_Bitas\KeysList_POS_DM_CuaHang.cs" />
+    <Compile Include="Obj_Bitas\KeysList_POS_DM_KhachHang.cs" />
+    <Compile Include="Obj_Bitas\KeysList_POS_DM_PTTT.cs" />
+    <Compile Include="Obj_Bitas\KeysList_POS_KhuyenMai.cs" />
+    <Compile Include="Obj_Bitas\KeysList_POS_KhuyenMaiCuaHang.cs" />
+    <Compile Include="Obj_Bitas\KeysList_POS_KhuyenMaiDoiTuong.cs" />
+    <Compile Include="Obj_Bitas\KeysList_POS_KhuyenMaiKhoangGiaHoaDon.cs" />
+    <Compile Include="Obj_Bitas\KeysList_POS_KhuyenMaiKhoangGiaSanPham.cs" />
+    <Compile Include="Obj_Bitas\KeysList_POS_KhuyenMaiLoaiHang.cs" />
+    <Compile Include="Obj_Bitas\KeysList_SP_BangGia.cs" />
+    <Compile Include="Obj_Bitas\KeysList_SP_Barcode.cs" />
+    <Compile Include="Obj_Bitas\KeysList_SP_HinhAnh.cs" />
+    <Compile Include="Obj_Bitas\main_Bitas.cs" />
+    <Compile Include="Obj_Bitas\Multi.cs" />
+    <Compile Include="Obj_Bitas\Ob_DA_ChietKhau_Footer.cs" />
+    <Compile Include="Obj_Bitas\Ob_DA_Chietkhau_SetFormula.cs" />
+    <Compile Include="Obj_Bitas\Ob_DH_DonHang_H.cs" />
+    <Compile Include="Obj_Bitas\Ob_DH_DonHang_L.cs" />
+    <Compile Include="Obj_Bitas\Ob_DH_KhachHangMua.cs" />
+    <Compile Include="Obj_Bitas\Ob_DH_LoaiDH.cs" />
+    <Compile Include="Obj_Bitas\Ob_DH_PhieuXuat_H.cs" />
+    <Compile Include="Obj_Bitas\Ob_DH_PhieuXuat_L.cs" />
+    <Compile Include="Obj_Bitas\Ob_DH_SPMua.cs" />
+    <Compile Include="Obj_Bitas\Ob_DH_TrangThai.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_Ban.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_BangGia.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_BoSuuTap.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_ChietKhau.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_ChiNhanh.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_ChucNang.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_ChungLoai.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_DoiTuong.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_DongSP.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_DonViTien.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_DonViTinh.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_DuLieu.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_HeThong.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_KhachHang.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_Kho.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_KhuVuc.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_LoaiCK.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_LoaiHang.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_LoaiKH.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_Mau.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_NhaCungCap.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_NhomSize_Dong.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_NhomSize_H.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_NhomSize_L.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_SanPham.cs" />
+    <Compile Include="Obj_Bitas\Ob_DM_TinhTP.cs" />
+    <Compile Include="Obj_Bitas\Ob_HT_DuLieuChucNang.cs" />
+    <Compile Include="Obj_Bitas\Ob_HT_LichSuDangNhap.cs" />
+    <Compile Include="Obj_Bitas\Ob_HT_NguoiDung.cs" />
+    <Compile Include="Obj_Bitas\Ob_HT_NguoiDung_CuaHang.cs" />
+    <Compile Include="Obj_Bitas\Ob_HT_NhomNguoiDung.cs" />
+    <Compile Include="Obj_Bitas\Ob_HT_PhanQuyenDuLieu.cs" />
+    <Compile Include="Obj_Bitas\Ob_HT_PhienBan.cs" />
+    <Compile Include="Obj_Bitas\Ob_HT_TruSo.cs" />
+    <Compile Include="Obj_Bitas\Ob_KH_KeHoachCK_H.cs" />
+    <Compile Include="Obj_Bitas\Ob_KH_KeHoachCK_L.cs" />
+    <Compile Include="Obj_Bitas\Ob_KH_LoaiNX.cs" />
+    <Compile Include="Obj_Bitas\Ob_KH_NhapTu.cs" />
+    <Compile Include="Obj_Bitas\Ob_KH_PhieuDNXuat_H.cs" />
+    <Compile Include="Obj_Bitas\Ob_KH_PhieuDN_L.cs" />
+    <Compile Include="Obj_Bitas\Ob_KH_PhieuNhap_H.cs" />
+    <Compile Include="Obj_Bitas\Ob_KH_PhieuNhap_L.cs" />
+    <Compile Include="Obj_Bitas\Ob_KH_PhieuNXKhac_H.cs" />
+    <Compile Include="Obj_Bitas\Ob_KH_PhieuNXKhac_L.cs" />
+    <Compile Include="Obj_Bitas\Ob_KH_PhieuXuat_CK.cs" />
+    <Compile Include="Obj_Bitas\Ob_KH_PhieuXuat_H.cs" />
+    <Compile Include="Obj_Bitas\Ob_KH_PhieuXuat_L.cs" />
+    <Compile Include="Obj_Bitas\Ob_KH_PhieuYC_H.cs" />
+    <Compile Include="Obj_Bitas\Ob_KH_PhieuYC_L.cs" />
+    <Compile Include="Obj_Bitas\Ob_Phanquyen.cs" />
+    <Compile Include="Obj_Bitas\Ob_POS_BanHang_H.cs" />
+    <Compile Include="Obj_Bitas\Ob_POS_BanHang_L.cs" />
+    <Compile Include="Obj_Bitas\Ob_POS_DM_CuaHang.cs" />
+    <Compile Include="Obj_Bitas\Ob_POS_DM_KhachHang.cs" />
+    <Compile Include="Obj_Bitas\Ob_POS_DM_PTTT.cs" />
+    <Compile Include="Obj_Bitas\Ob_POS_KhuyenMai.cs" />
+    <Compile Include="Obj_Bitas\Ob_POS_KhuyenMaiCuaHang.cs" />
+    <Compile Include="Obj_Bitas\Ob_POS_KhuyenMaiDoiTuong.cs" />
+    <Compile Include="Obj_Bitas\Ob_POS_KhuyenMaiKhoangGiaHoaDon.cs" />
+    <Compile Include="Obj_Bitas\Ob_POS_KhuyenMaiKhoangGiaSanPham.cs" />
+    <Compile Include="Obj_Bitas\Ob_POS_KhuyenMaiLoaiHang.cs" />
+    <Compile Include="Obj_Bitas\Ob_SP_BangGia.cs" />
+    <Compile Include="Obj_Bitas\Ob_SP_Barcode.cs" />
+    <Compile Include="Obj_Bitas\Ob_SP_HinhAnh.cs" />
+    <Compile Include="Obj_Bitas\Session.cs" />
+    <Compile Include="Obj_Bitas\SQLServer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

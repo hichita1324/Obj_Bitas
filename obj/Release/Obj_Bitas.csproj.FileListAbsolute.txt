@@ -1,0 +1,8 @@
+D:\BSM Project\Obj_Bitas\bin\Release\Obj_Bitas.dll
+D:\BSM Project\Obj_Bitas\bin\Release\Obj_Bitas.pdb
+D:\BSM Project\Obj_Bitas\obj\Release\Obj_Bitas.dll
+D:\BSM Project\Obj_Bitas\obj\Release\Obj_Bitas.pdb
+E:\POS HOI CHO\POS\Obj_Bitas\bin\Release\Obj_Bitas.dll
+E:\POS HOI CHO\POS\Obj_Bitas\bin\Release\Obj_Bitas.pdb
+E:\POS HOI CHO\POS\Obj_Bitas\obj\Release\Obj_Bitas.dll
+E:\POS HOI CHO\POS\Obj_Bitas\obj\Release\Obj_Bitas.pdb
