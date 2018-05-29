@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data.SqlTypes;
 
-//CreateTimes : 04/12/2017 16:42:52.PM
+//CreateTimes : 28/05/2018 10:27:13.AM
 
 namespace Bitas
 {
@@ -33,7 +33,7 @@ namespace Bitas
 			{
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Select ID_KhachHang, TenKhachHang, SoDienThoai, DiaChi, ID_LoaiKH, idx, DiemTichLuy, Active, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy From POS_DM_KhachHang"
+				CommandText = @"Select ID_KhachHang, TenKhachHang, SoDienThoai, NgaySinh, GioiTinh, DiaChi, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy From POS_DM_KhachHang"
 			};
 			SqlDataReader reader = command.ExecuteReader();
 			while (reader.Read())
@@ -42,15 +42,13 @@ namespace Bitas
 				if(reader[0] != DBNull.Value){ ob.ID_KHACHHANG = Convert.ToString(reader[0]);}
 				if(reader[1] != DBNull.Value){ ob.TENKHACHHANG = Convert.ToString(reader[1]);}
 				if(reader[2] != DBNull.Value){ ob.SODIENTHOAI = Convert.ToString(reader[2]);}
-				if(reader[3] != DBNull.Value){ ob.DIACHI = Convert.ToString(reader[3]);}
-				if(reader[4] != DBNull.Value){ ob.ID_LOAIKH = Convert.ToInt32(reader[4]);}
-				if(reader[5] != DBNull.Value){ ob.IDX = Convert.ToInt32(reader[5]);}
-				if(reader[6] != DBNull.Value){ ob.DIEMTICHLUY = Convert.ToInt32(reader[6]);}
-				if(reader[7] != DBNull.Value){ ob.ACTIVE = Convert.ToBoolean(reader[7]);}
-				if(reader[8] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[8]);}
-				if(reader[9] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[9]);}
-				if(reader[10] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[10]);}
-				if(reader[11] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[11]);}
+				if(reader[3] != DBNull.Value){ ob.NGAYSINH = Convert.ToDateTime(reader[3]);}
+				if(reader[4] != DBNull.Value){ ob.GIOITINH = Convert.ToInt32(reader[4]);}
+				if(reader[5] != DBNull.Value){ ob.DIACHI = Convert.ToString(reader[5]);}
+				if(reader[6] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[6]);}
+				if(reader[7] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[7]);}
+				if(reader[8] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[8]);}
+				if(reader[9] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[9]);}
 				list.Add(ob);
 			}
 			command.Dispose();
@@ -82,15 +80,13 @@ namespace Bitas
 				if(reader[0] != DBNull.Value){ ob.ID_KHACHHANG = Convert.ToString(reader[0]);}
 				if(reader[1] != DBNull.Value){ ob.TENKHACHHANG = Convert.ToString(reader[1]);}
 				if(reader[2] != DBNull.Value){ ob.SODIENTHOAI = Convert.ToString(reader[2]);}
-				if(reader[3] != DBNull.Value){ ob.DIACHI = Convert.ToString(reader[3]);}
-				if(reader[4] != DBNull.Value){ ob.ID_LOAIKH = Convert.ToInt32(reader[4]);}
-				if(reader[5] != DBNull.Value){ ob.IDX = Convert.ToInt32(reader[5]);}
-				if(reader[6] != DBNull.Value){ ob.DIEMTICHLUY = Convert.ToInt32(reader[6]);}
-				if(reader[7] != DBNull.Value){ ob.ACTIVE = Convert.ToBoolean(reader[7]);}
-				if(reader[8] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[8]);}
-				if(reader[9] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[9]);}
-				if(reader[10] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[10]);}
-				if(reader[11] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[11]);}
+				if(reader[3] != DBNull.Value){ ob.NGAYSINH = Convert.ToDateTime(reader[3]);}
+				if(reader[4] != DBNull.Value){ ob.GIOITINH = Convert.ToInt32(reader[4]);}
+				if(reader[5] != DBNull.Value){ ob.DIACHI = Convert.ToString(reader[5]);}
+				if(reader[6] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[6]);}
+				if(reader[7] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[7]);}
+				if(reader[8] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[8]);}
+				if(reader[9] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[9]);}
 				list.Add(ob);
 			}
 			command.Dispose();
@@ -113,7 +109,7 @@ namespace Bitas
 			{
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Select ID_KhachHang, TenKhachHang, SoDienThoai, DiaChi, ID_LoaiKH, idx, DiemTichLuy, Active, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy From POS_DM_KhachHang Where "+ keyword +""
+				CommandText = @"Select ID_KhachHang, TenKhachHang, SoDienThoai, NgaySinh, GioiTinh, DiaChi, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy From POS_DM_KhachHang Where "+ keyword +""
 			};
 			SqlDataReader reader = command.ExecuteReader();
 			while (reader.Read())
@@ -122,15 +118,13 @@ namespace Bitas
 				if(reader[0] != DBNull.Value){ ob.ID_KHACHHANG = Convert.ToString(reader[0]);}
 				if(reader[1] != DBNull.Value){ ob.TENKHACHHANG = Convert.ToString(reader[1]);}
 				if(reader[2] != DBNull.Value){ ob.SODIENTHOAI = Convert.ToString(reader[2]);}
-				if(reader[3] != DBNull.Value){ ob.DIACHI = Convert.ToString(reader[3]);}
-				if(reader[4] != DBNull.Value){ ob.ID_LOAIKH = Convert.ToInt32(reader[4]);}
-				if(reader[5] != DBNull.Value){ ob.IDX = Convert.ToInt32(reader[5]);}
-				if(reader[6] != DBNull.Value){ ob.DIEMTICHLUY = Convert.ToInt32(reader[6]);}
-				if(reader[7] != DBNull.Value){ ob.ACTIVE = Convert.ToBoolean(reader[7]);}
-				if(reader[8] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[8]);}
-				if(reader[9] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[9]);}
-				if(reader[10] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[10]);}
-				if(reader[11] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[11]);}
+				if(reader[3] != DBNull.Value){ ob.NGAYSINH = Convert.ToDateTime(reader[3]);}
+				if(reader[4] != DBNull.Value){ ob.GIOITINH = Convert.ToInt32(reader[4]);}
+				if(reader[5] != DBNull.Value){ ob.DIACHI = Convert.ToString(reader[5]);}
+				if(reader[6] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[6]);}
+				if(reader[7] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[7]);}
+				if(reader[8] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[8]);}
+				if(reader[9] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[9]);}
 				list.Add(ob);
 			}
 			command.Dispose();
@@ -163,15 +157,13 @@ namespace Bitas
 				if(reader[0] != DBNull.Value){ ob.ID_KHACHHANG = Convert.ToString(reader[0]);}
 				if(reader[1] != DBNull.Value){ ob.TENKHACHHANG = Convert.ToString(reader[1]);}
 				if(reader[2] != DBNull.Value){ ob.SODIENTHOAI = Convert.ToString(reader[2]);}
-				if(reader[3] != DBNull.Value){ ob.DIACHI = Convert.ToString(reader[3]);}
-				if(reader[4] != DBNull.Value){ ob.ID_LOAIKH = Convert.ToInt32(reader[4]);}
-				if(reader[5] != DBNull.Value){ ob.IDX = Convert.ToInt32(reader[5]);}
-				if(reader[6] != DBNull.Value){ ob.DIEMTICHLUY = Convert.ToInt32(reader[6]);}
-				if(reader[7] != DBNull.Value){ ob.ACTIVE = Convert.ToBoolean(reader[7]);}
-				if(reader[8] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[8]);}
-				if(reader[9] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[9]);}
-				if(reader[10] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[10]);}
-				if(reader[11] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[11]);}
+				if(reader[3] != DBNull.Value){ ob.NGAYSINH = Convert.ToDateTime(reader[3]);}
+				if(reader[4] != DBNull.Value){ ob.GIOITINH = Convert.ToInt32(reader[4]);}
+				if(reader[5] != DBNull.Value){ ob.DIACHI = Convert.ToString(reader[5]);}
+				if(reader[6] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[6]);}
+				if(reader[7] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[7]);}
+				if(reader[8] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[8]);}
+				if(reader[9] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[9]);}
 				list.Add(ob);
 			}
 			command.Dispose();
@@ -194,7 +186,7 @@ namespace Bitas
 			{
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Select ID_KhachHang, TenKhachHang, SoDienThoai, DiaChi, ID_LoaiKH, idx, DiemTichLuy, Active, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy From POS_DM_KhachHang Where "+ keyword +""
+				CommandText = @"Select ID_KhachHang, TenKhachHang, SoDienThoai, NgaySinh, GioiTinh, DiaChi, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy From POS_DM_KhachHang Where "+ keyword +""
 			};
 			SqlDataReader reader = command.ExecuteReader();
 			int num = 0;
@@ -204,15 +196,13 @@ namespace Bitas
 				if(reader[0] != DBNull.Value){ ob.ID_KHACHHANG = Convert.ToString(reader[0]);}
 				if(reader[1] != DBNull.Value){ ob.TENKHACHHANG = Convert.ToString(reader[1]);}
 				if(reader[2] != DBNull.Value){ ob.SODIENTHOAI = Convert.ToString(reader[2]);}
-				if(reader[3] != DBNull.Value){ ob.DIACHI = Convert.ToString(reader[3]);}
-				if(reader[4] != DBNull.Value){ ob.ID_LOAIKH = Convert.ToInt32(reader[4]);}
-				if(reader[5] != DBNull.Value){ ob.IDX = Convert.ToInt32(reader[5]);}
-				if(reader[6] != DBNull.Value){ ob.DIEMTICHLUY = Convert.ToInt32(reader[6]);}
-				if(reader[7] != DBNull.Value){ ob.ACTIVE = Convert.ToBoolean(reader[7]);}
-				if(reader[8] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[8]);}
-				if(reader[9] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[9]);}
-				if(reader[10] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[10]);}
-				if(reader[11] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[11]);}
+				if(reader[3] != DBNull.Value){ ob.NGAYSINH = Convert.ToDateTime(reader[3]);}
+				if(reader[4] != DBNull.Value){ ob.GIOITINH = Convert.ToInt32(reader[4]);}
+				if(reader[5] != DBNull.Value){ ob.DIACHI = Convert.ToString(reader[5]);}
+				if(reader[6] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[6]);}
+				if(reader[7] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[7]);}
+				if(reader[8] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[8]);}
+				if(reader[9] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[9]);}
 			}
 			if (num == 0)
 			{
@@ -242,9 +232,8 @@ namespace Bitas
 			{
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Insert Into POS_DM_KhachHang (TenKhachHang, SoDienThoai, DiaChi, ID_LoaiKH, DiemTichLuy, Active, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy) Values(@TenKhachHang, @SoDienThoai, @DiaChi, @ID_LoaiKH, @DiemTichLuy, @Active, @CreatedTime, @CreatedBy, @ModifiedTime, @ModifiedBy)"
+				CommandText = @"Insert Into POS_DM_KhachHang (TenKhachHang, SoDienThoai, NgaySinh, GioiTinh, DiaChi, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy) Values(@TenKhachHang, @SoDienThoai, @NgaySinh, @GioiTinh, @DiaChi, @CreatedTime, @CreatedBy, @ModifiedTime, @ModifiedBy)"
 			};
-			//command.Parameters.Add("ID_KhachHang", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_KHACHHANG);
 			if (ob.TENKHACHHANG.Trim() == "")
 				command.Parameters.Add("TenKhachHang", SqlDbType.NVarChar).Value  = DBNull.Value;
 			else
@@ -253,14 +242,15 @@ namespace Bitas
 				command.Parameters.Add("SoDienThoai", SqlDbType.VarChar).Value  = DBNull.Value;
 			else
 				command.Parameters.Add("SoDienThoai", SqlDbType.VarChar).Value = ob.SODIENTHOAI;
+			if (ob.NGAYSINH == DateTime.MinValue)
+				command.Parameters.Add("NgaySinh", SqlDbType.DateTime).Value = DBNull.Value;
+			else
+				command.Parameters.Add("NgaySinh", SqlDbType.DateTime).Value = ob.NGAYSINH;
+			command.Parameters.Add("GioiTinh", SqlDbType.Int).Value = ob.GIOITINH;
 			if (ob.DIACHI.Trim() == "")
 				command.Parameters.Add("DiaChi", SqlDbType.NVarChar).Value  = DBNull.Value;
 			else
 				command.Parameters.Add("DiaChi", SqlDbType.NVarChar).Value = ob.DIACHI;
-			command.Parameters.Add("ID_LoaiKH", SqlDbType.Int).Value = ob.ID_LOAIKH;
-			command.Parameters.Add("idx", SqlDbType.Int).Value = ob.IDX;
-			command.Parameters.Add("DiemTichLuy", SqlDbType.Int).Value = ob.DIEMTICHLUY;
-			command.Parameters.Add("Active", SqlDbType.Bit).Value = ob.ACTIVE;
 			if (ob.CREATEDTIME == DateTime.MinValue)
 				command.Parameters.Add("CreatedTime", SqlDbType.DateTime).Value = DBNull.Value;
 			else
@@ -295,9 +285,9 @@ namespace Bitas
 			return true;
 		}
 		//InsertobGetId
-		public string _InsertObGetId(Ob_POS_DM_KhachHang ob, SqlConnection conn)
+		public int _InsertObGetId(Ob_POS_DM_KhachHang ob, SqlConnection conn)
 		{
-			string num = "";
+			int num = 0;
 			if (conn.ConnectionString != "")
 			{
 			conn.Open();
@@ -305,9 +295,9 @@ namespace Bitas
 			{
 				Connection = conn,
 				CommandType = CommandType.Text,
-                CommandText = @"Insert Into POS_DM_KhachHang (TenKhachHang, SoDienThoai, DiaChi, ID_LoaiKH, TenKhachHang, SoDienThoai, DiaChi, ID_LoaiKH, idx, DiemTichLuy, Active, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy) OUTPUT INSERTED.ID_KhachHang Values(@TenKhachHang, @SoDienThoai, @DiaChi, @ID_LoaiKH, @TenKhachHang, @SoDienThoai, @DiaChi, @ID_LoaiKH, @idx, @DiemTichLuy, @Active, @CreatedTime, @CreatedBy, @ModifiedTime, @ModifiedBy) Select @@IDENTITY"
+				CommandText = @"Insert Into POS_DM_KhachHang (ID_KhachHang, TenKhachHang, SoDienThoai, NgaySinh, GioiTinh, DiaChi, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy) Values(@ID_KhachHang, @TenKhachHang, @SoDienThoai, @NgaySinh, @GioiTinh, @DiaChi, @CreatedTime, @CreatedBy, @ModifiedTime, @ModifiedBy)Select @@IDENTITY"
 			};
-			//command.Parameters.Add("ID_KhachHang", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_KHACHHANG);
+			command.Parameters.Add("ID_KhachHang", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_KHACHHANG);
 			if (ob.TENKHACHHANG.Trim() == "")
 				command.Parameters.Add("TenKhachHang", SqlDbType.NVarChar).Value  = DBNull.Value;
 			else
@@ -316,14 +306,15 @@ namespace Bitas
 				command.Parameters.Add("SoDienThoai", SqlDbType.VarChar).Value  = DBNull.Value;
 			else
 				command.Parameters.Add("SoDienThoai", SqlDbType.VarChar).Value = ob.SODIENTHOAI;
+			if (ob.NGAYSINH == DateTime.MinValue)
+				command.Parameters.Add("NgaySinh", SqlDbType.DateTime).Value = DBNull.Value;
+			else
+				command.Parameters.Add("NgaySinh", SqlDbType.DateTime).Value = ob.NGAYSINH;
+			command.Parameters.Add("GioiTinh", SqlDbType.Int).Value = ob.GIOITINH;
 			if (ob.DIACHI.Trim() == "")
 				command.Parameters.Add("DiaChi", SqlDbType.NVarChar).Value  = DBNull.Value;
 			else
 				command.Parameters.Add("DiaChi", SqlDbType.NVarChar).Value = ob.DIACHI;
-			command.Parameters.Add("ID_LoaiKH", SqlDbType.Int).Value = ob.ID_LOAIKH;
-			command.Parameters.Add("idx", SqlDbType.Int).Value = ob.IDX;
-			command.Parameters.Add("DiemTichLuy", SqlDbType.Int).Value = ob.DIEMTICHLUY;
-			command.Parameters.Add("Active", SqlDbType.Bit).Value = ob.ACTIVE;
 			if (ob.CREATEDTIME == DateTime.MinValue)
 				command.Parameters.Add("CreatedTime", SqlDbType.DateTime).Value = DBNull.Value;
 			else
@@ -342,7 +333,7 @@ namespace Bitas
 				command.Parameters.Add("ModifiedBy", SqlDbType.VarChar).Value = ob.MODIFIEDBY;
 			try
 			{
-				 num = command.ExecuteScalar().ToString();
+				 num = Convert.ToInt32(command.ExecuteScalar());
 			}
 			catch (Exception exception)
 			{
@@ -369,7 +360,7 @@ namespace Bitas
 			SqlCommand command = new SqlCommand {
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Update POS_DM_KhachHang Set TenKhachHang=@TenKhachHang, SoDienThoai=@SoDienThoai, DiaChi=@DiaChi, ID_LoaiKH=@ID_LoaiKH, idx=@idx, DiemTichLuy=@DiemTichLuy, Active=@Active, CreatedTime=@CreatedTime, CreatedBy=@CreatedBy, ModifiedTime=@ModifiedTime, ModifiedBy=@ModifiedBy Where ID_KhachHang=@ID_KhachHang"
+				CommandText = @"Update POS_DM_KhachHang Set TenKhachHang=@TenKhachHang, SoDienThoai=@SoDienThoai, NgaySinh=@NgaySinh, GioiTinh=@GioiTinh, DiaChi=@DiaChi, CreatedTime=@CreatedTime, CreatedBy=@CreatedBy, ModifiedTime=@ModifiedTime, ModifiedBy=@ModifiedBy Where ID_KhachHang=@ID_KhachHang"
 			};
 			command.Parameters.Add("ID_KhachHang", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_KHACHHANG);
 			if (ob.TENKHACHHANG.Trim() == "")
@@ -380,14 +371,15 @@ namespace Bitas
 				command.Parameters.Add("SoDienThoai", SqlDbType.VarChar).Value  = DBNull.Value;
 			else
 				command.Parameters.Add("SoDienThoai", SqlDbType.VarChar).Value = ob.SODIENTHOAI;
+			if (ob.NGAYSINH == DateTime.MinValue)
+				command.Parameters.Add("NgaySinh", SqlDbType.DateTime).Value = DBNull.Value;
+			else
+				command.Parameters.Add("NgaySinh", SqlDbType.DateTime).Value = ob.NGAYSINH;
+			command.Parameters.Add("GioiTinh", SqlDbType.Int).Value = ob.GIOITINH;
 			if (ob.DIACHI.Trim() == "")
 				command.Parameters.Add("DiaChi", SqlDbType.NVarChar).Value  = DBNull.Value;
 			else
 				command.Parameters.Add("DiaChi", SqlDbType.NVarChar).Value = ob.DIACHI;
-			command.Parameters.Add("ID_LoaiKH", SqlDbType.Int).Value = ob.ID_LOAIKH;
-			command.Parameters.Add("idx", SqlDbType.Int).Value = ob.IDX;
-			command.Parameters.Add("DiemTichLuy", SqlDbType.Int).Value = ob.DIEMTICHLUY;
-			command.Parameters.Add("Active", SqlDbType.Bit).Value = ob.ACTIVE;
 			if (ob.CREATEDTIME == DateTime.MinValue)
 				command.Parameters.Add("CreatedTime", SqlDbType.DateTime).Value = DBNull.Value;
 			else
