@@ -53,6 +53,7 @@
     <Compile Include="Obj_Bitas\KeysList_DM_Ban.cs" />
     <Compile Include="Obj_Bitas\KeysList_DM_HeThong.cs" />
     <Compile Include="Obj_Bitas\KeysList_DM_LoaiKH.cs" />
+    <Compile Include="Obj_Bitas\KeysList_HT_KeyAPI.cs" />
     <Compile Include="Obj_Bitas\KeysList_HT_NguoiDung_CuaHang.cs" />
     <Compile Include="Obj_Bitas\KeysList_HT_TruSo.cs" />
     <Compile Include="Obj_Bitas\KeysList_KH_LoaiNX.cs" />
@@ -155,6 +156,7 @@
     <Compile Include="Obj_Bitas\Ob_DM_SanPham.cs" />
     <Compile Include="Obj_Bitas\Ob_DM_TinhTP.cs" />
     <Compile Include="Obj_Bitas\Ob_HT_DuLieuChucNang.cs" />
+    <Compile Include="Obj_Bitas\Ob_HT_KeyAPI.cs" />
     <Compile Include="Obj_Bitas\Ob_HT_LichSuDangNhap.cs" />
     <Compile Include="Obj_Bitas\Ob_HT_NguoiDung.cs" />
     <Compile Include="Obj_Bitas\Ob_HT_NguoiDung_CuaHang.cs" />

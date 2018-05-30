@@ -38,6 +38,7 @@ namespace Bitas
         public static KeysList_HT_NhomNguoiDung keys_HT_NhomNguoiDung = new KeysList_HT_NhomNguoiDung();
         public static KeysList_HT_PhanQuyenDuLieu keys_HT_PhanQuyenDuLieu = new KeysList_HT_PhanQuyenDuLieu();
         public static KeysList_HT_PhienBan keys_HT_PhienBan = new KeysList_HT_PhienBan();
+        public static KeysList_HT_KeyAPI keys_HT_KeyAPI = new KeysList_HT_KeyAPI();
         public static KeysList_SP_BangGia keys_SP_BangGia = new KeysList_SP_BangGia();
         public static KeysList_SP_Barcode keys_SP_Barcode = new KeysList_SP_Barcode();
         public static KeysList_SP_HinhAnh keys_SP_HinhAnh = new KeysList_SP_HinhAnh();
