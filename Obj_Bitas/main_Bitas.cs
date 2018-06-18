@@ -48,6 +48,8 @@ namespace Bitas
         public static KeysList_POS_DM_CuaHang keys_POS_DM_CuaHang = new KeysList_POS_DM_CuaHang();
         public static KeysList_POS_BanHang_H keys_POS_BanHang_H = new KeysList_POS_BanHang_H();
         public static KeysList_POS_BanHang_L keys_POS_BanHang_L = new KeysList_POS_BanHang_L();
+        public static KeysList_POS_NhapHang_H keys_POS_NhapHang_H = new KeysList_POS_NhapHang_H();
+        public static KeysList_POS_NhapHang_L keys_POS_NhapHang_L = new KeysList_POS_NhapHang_L();
         public static KeysList_POS_KhuyenMaiDoiTuong keys_POS_KhuyenMaiDoiTuong = new KeysList_POS_KhuyenMaiDoiTuong();
         public static KeysList_POS_KhuyenMaiLoaiHang keys_POS_KhuyenMaiLoaiHang = new KeysList_POS_KhuyenMaiLoaiHang();
         public static KeysList_POS_KhuyenMai keys_POS_KhuyenMai = new KeysList_POS_KhuyenMai();

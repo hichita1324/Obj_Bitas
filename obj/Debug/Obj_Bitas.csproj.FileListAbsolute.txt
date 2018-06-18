@@ -27,4 +27,3 @@ D:\WORK\POS BSM\Obj_Bitas\bin\Debug\Obj_Bitas.pdb
 D:\WORK\POS BSM\Obj_Bitas\obj\Debug\Obj_Bitas.csprojResolveAssemblyReference.cache
 D:\WORK\POS BSM\Obj_Bitas\obj\Debug\Obj_Bitas.dll
 D:\WORK\POS BSM\Obj_Bitas\obj\Debug\Obj_Bitas.pdb
-D:\TONG HOP BSM\POS\Obj_Bitas\obj\Debug\Obj_Bitas.csprojResolveAssemblyReference.cache
