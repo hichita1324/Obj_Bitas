@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data.SqlTypes;
 
-//CreateTimes : 13/06/2018 11:48:37.AM
+//CreateTimes : 22/06/2018 15:45:13.PM
 
 namespace Bitas
 {
@@ -475,7 +475,10 @@ namespace Bitas
 				command.Parameters.Add("MaPhieuBanHang", SqlDbType.VarChar).Value = ob.MAPHIEUBANHANG;
 			command.Parameters.Add("ID_CuaHang", SqlDbType.Int).Value = ob.ID_CUAHANG;
 			command.Parameters.Add("ID_Kho", SqlDbType.Int).Value = ob.ID_KHO;
-			command.Parameters.Add("ID_NhaCC", SqlDbType.Int).Value = ob.ID_NHACC;
+            if (ob.ID_NHACC == 0)
+    			command.Parameters.Add("ID_NhaCC", SqlDbType.Int).Value = DBNull.Value;
+            else
+                command.Parameters.Add("ID_NhaCC", SqlDbType.Int).Value = ob.ID_NHACC;
 			command.Parameters.Add("ID_KhachHang", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_KHACHHANG);
 			command.Parameters.Add("ID_LoaiXuat", SqlDbType.Int).Value = ob.ID_LOAIXUAT;
 			if (ob.NGAYBANHANG == DateTime.MinValue)
