@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data.SqlTypes;
 
-//CreateTimes : 22/06/2018 15:45:13.PM
+//CreateTimes : 27/06/2018 10:31:53.AM
 
 namespace Bitas
 {
@@ -33,7 +33,7 @@ namespace Bitas
 			{
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Select ID_PhieuBanHang_H, MaPhieuBanHang, ID_CuaHang, ID_Kho, ID_NhaCC, ID_KhachHang, ID_LoaiXuat, NgayBanHang, GhiChu, PTGiamGia, GiamGiaPT, GiamGiaCoDinh, SoLuong, ThanhTien, ThucThu, TienVourcher, TongThanhToan, MaKhuyenMai, ID_TrangThaiPhieu, ID_PTTT, TienKhachTra, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy From POS_BanHang_H"
+				CommandText = @"Select ID_PhieuBanHang_H, MaPhieuBanHang, ID_KiemKe, ID_CuaHang, ID_Kho, ID_NhaCC, ID_KhachHang, ID_LoaiXuat, NgayBanHang, GhiChu, PTGiamGia, GiamGiaPT, GiamGiaCoDinh, SoLuong, ThanhTien, ThucThu, TienVourcher, TongThanhToan, MaKhuyenMai, ID_TrangThaiPhieu, ID_PTTT, TienKhachTra, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy From POS_BanHang_H"
 			};
 			SqlDataReader reader = command.ExecuteReader();
 			while (reader.Read())
@@ -41,29 +41,30 @@ namespace Bitas
 				Ob_POS_BanHang_H ob = new Ob_POS_BanHang_H();
 				if(reader[0] != DBNull.Value){ ob.ID_PHIEUBANHANG_H = Convert.ToString(reader[0]);}
 				if(reader[1] != DBNull.Value){ ob.MAPHIEUBANHANG = Convert.ToString(reader[1]);}
-				if(reader[2] != DBNull.Value){ ob.ID_CUAHANG = Convert.ToInt32(reader[2]);}
-				if(reader[3] != DBNull.Value){ ob.ID_KHO = Convert.ToInt32(reader[3]);}
-				if(reader[4] != DBNull.Value){ ob.ID_NHACC = Convert.ToInt32(reader[4]);}
-				if(reader[5] != DBNull.Value){ ob.ID_KHACHHANG = Convert.ToString(reader[5]);}
-				if(reader[6] != DBNull.Value){ ob.ID_LOAIXUAT = Convert.ToInt32(reader[6]);}
-				if(reader[7] != DBNull.Value){ ob.NGAYBANHANG = Convert.ToDateTime(reader[7]);}
-				if(reader[8] != DBNull.Value){ ob.GHICHU = Convert.ToString(reader[8]);}
-				if(reader[9] != DBNull.Value){ ob.PTGIAMGIA = Convert.ToDouble(reader[9]);}
-				if(reader[10] != DBNull.Value){ ob.GIAMGIAPT = Convert.ToDouble(reader[10]);}
-				if(reader[11] != DBNull.Value){ ob.GIAMGIACODINH = Convert.ToDouble(reader[11]);}
-				if(reader[12] != DBNull.Value){ ob.SOLUONG = Convert.ToInt32(reader[12]);}
-				if(reader[13] != DBNull.Value){ ob.THANHTIEN = Convert.ToDouble(reader[13]);}
-				if(reader[14] != DBNull.Value){ ob.THUCTHU = Convert.ToDouble(reader[14]);}
-				if(reader[15] != DBNull.Value){ ob.TIENVOURCHER = Convert.ToDouble(reader[15]);}
-				if(reader[16] != DBNull.Value){ ob.TONGTHANHTOAN = Convert.ToDouble(reader[16]);}
-				if(reader[17] != DBNull.Value){ ob.MAKHUYENMAI = Convert.ToString(reader[17]);}
-				if(reader[18] != DBNull.Value){ ob.ID_TRANGTHAIPHIEU = Convert.ToInt32(reader[18]);}
-				if(reader[19] != DBNull.Value){ ob.ID_PTTT = Convert.ToInt32(reader[19]);}
-				if(reader[20] != DBNull.Value){ ob.TIENKHACHTRA = Convert.ToDouble(reader[20]);}
-				if(reader[21] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[21]);}
-				if(reader[22] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[22]);}
-				if(reader[23] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[23]);}
-				if(reader[24] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[24]);}
+				if(reader[2] != DBNull.Value){ ob.ID_KIEMKE = Convert.ToString(reader[2]);}
+				if(reader[3] != DBNull.Value){ ob.ID_CUAHANG = Convert.ToInt32(reader[3]);}
+				if(reader[4] != DBNull.Value){ ob.ID_KHO = Convert.ToInt32(reader[4]);}
+				if(reader[5] != DBNull.Value){ ob.ID_NHACC = Convert.ToInt32(reader[5]);}
+				if(reader[6] != DBNull.Value){ ob.ID_KHACHHANG = Convert.ToString(reader[6]);}
+				if(reader[7] != DBNull.Value){ ob.ID_LOAIXUAT = Convert.ToInt32(reader[7]);}
+				if(reader[8] != DBNull.Value){ ob.NGAYBANHANG = Convert.ToDateTime(reader[8]);}
+				if(reader[9] != DBNull.Value){ ob.GHICHU = Convert.ToString(reader[9]);}
+				if(reader[10] != DBNull.Value){ ob.PTGIAMGIA = Convert.ToDouble(reader[10]);}
+				if(reader[11] != DBNull.Value){ ob.GIAMGIAPT = Convert.ToDouble(reader[11]);}
+				if(reader[12] != DBNull.Value){ ob.GIAMGIACODINH = Convert.ToDouble(reader[12]);}
+				if(reader[13] != DBNull.Value){ ob.SOLUONG = Convert.ToInt32(reader[13]);}
+				if(reader[14] != DBNull.Value){ ob.THANHTIEN = Convert.ToDouble(reader[14]);}
+				if(reader[15] != DBNull.Value){ ob.THUCTHU = Convert.ToDouble(reader[15]);}
+				if(reader[16] != DBNull.Value){ ob.TIENVOURCHER = Convert.ToDouble(reader[16]);}
+				if(reader[17] != DBNull.Value){ ob.TONGTHANHTOAN = Convert.ToDouble(reader[17]);}
+				if(reader[18] != DBNull.Value){ ob.MAKHUYENMAI = Convert.ToString(reader[18]);}
+				if(reader[19] != DBNull.Value){ ob.ID_TRANGTHAIPHIEU = Convert.ToInt32(reader[19]);}
+				if(reader[20] != DBNull.Value){ ob.ID_PTTT = Convert.ToInt32(reader[20]);}
+				if(reader[21] != DBNull.Value){ ob.TIENKHACHTRA = Convert.ToDouble(reader[21]);}
+				if(reader[22] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[22]);}
+				if(reader[23] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[23]);}
+				if(reader[24] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[24]);}
+				if(reader[25] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[25]);}
 				list.Add(ob);
 			}
 			command.Dispose();
@@ -94,29 +95,30 @@ namespace Bitas
 				Ob_POS_BanHang_H ob = new Ob_POS_BanHang_H();
 				if(reader[0] != DBNull.Value){ ob.ID_PHIEUBANHANG_H = Convert.ToString(reader[0]);}
 				if(reader[1] != DBNull.Value){ ob.MAPHIEUBANHANG = Convert.ToString(reader[1]);}
-				if(reader[2] != DBNull.Value){ ob.ID_CUAHANG = Convert.ToInt32(reader[2]);}
-				if(reader[3] != DBNull.Value){ ob.ID_KHO = Convert.ToInt32(reader[3]);}
-				if(reader[4] != DBNull.Value){ ob.ID_NHACC = Convert.ToInt32(reader[4]);}
-				if(reader[5] != DBNull.Value){ ob.ID_KHACHHANG = Convert.ToString(reader[5]);}
-				if(reader[6] != DBNull.Value){ ob.ID_LOAIXUAT = Convert.ToInt32(reader[6]);}
-				if(reader[7] != DBNull.Value){ ob.NGAYBANHANG = Convert.ToDateTime(reader[7]);}
-				if(reader[8] != DBNull.Value){ ob.GHICHU = Convert.ToString(reader[8]);}
-				if(reader[9] != DBNull.Value){ ob.PTGIAMGIA = Convert.ToDouble(reader[9]);}
-				if(reader[10] != DBNull.Value){ ob.GIAMGIAPT = Convert.ToDouble(reader[10]);}
-				if(reader[11] != DBNull.Value){ ob.GIAMGIACODINH = Convert.ToDouble(reader[11]);}
-				if(reader[12] != DBNull.Value){ ob.SOLUONG = Convert.ToInt32(reader[12]);}
-				if(reader[13] != DBNull.Value){ ob.THANHTIEN = Convert.ToDouble(reader[13]);}
-				if(reader[14] != DBNull.Value){ ob.THUCTHU = Convert.ToDouble(reader[14]);}
-				if(reader[15] != DBNull.Value){ ob.TIENVOURCHER = Convert.ToDouble(reader[15]);}
-				if(reader[16] != DBNull.Value){ ob.TONGTHANHTOAN = Convert.ToDouble(reader[16]);}
-				if(reader[17] != DBNull.Value){ ob.MAKHUYENMAI = Convert.ToString(reader[17]);}
-				if(reader[18] != DBNull.Value){ ob.ID_TRANGTHAIPHIEU = Convert.ToInt32(reader[18]);}
-				if(reader[19] != DBNull.Value){ ob.ID_PTTT = Convert.ToInt32(reader[19]);}
-				if(reader[20] != DBNull.Value){ ob.TIENKHACHTRA = Convert.ToDouble(reader[20]);}
-				if(reader[21] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[21]);}
-				if(reader[22] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[22]);}
-				if(reader[23] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[23]);}
-				if(reader[24] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[24]);}
+				if(reader[2] != DBNull.Value){ ob.ID_KIEMKE = Convert.ToString(reader[2]);}
+				if(reader[3] != DBNull.Value){ ob.ID_CUAHANG = Convert.ToInt32(reader[3]);}
+				if(reader[4] != DBNull.Value){ ob.ID_KHO = Convert.ToInt32(reader[4]);}
+				if(reader[5] != DBNull.Value){ ob.ID_NHACC = Convert.ToInt32(reader[5]);}
+				if(reader[6] != DBNull.Value){ ob.ID_KHACHHANG = Convert.ToString(reader[6]);}
+				if(reader[7] != DBNull.Value){ ob.ID_LOAIXUAT = Convert.ToInt32(reader[7]);}
+				if(reader[8] != DBNull.Value){ ob.NGAYBANHANG = Convert.ToDateTime(reader[8]);}
+				if(reader[9] != DBNull.Value){ ob.GHICHU = Convert.ToString(reader[9]);}
+				if(reader[10] != DBNull.Value){ ob.PTGIAMGIA = Convert.ToDouble(reader[10]);}
+				if(reader[11] != DBNull.Value){ ob.GIAMGIAPT = Convert.ToDouble(reader[11]);}
+				if(reader[12] != DBNull.Value){ ob.GIAMGIACODINH = Convert.ToDouble(reader[12]);}
+				if(reader[13] != DBNull.Value){ ob.SOLUONG = Convert.ToInt32(reader[13]);}
+				if(reader[14] != DBNull.Value){ ob.THANHTIEN = Convert.ToDouble(reader[14]);}
+				if(reader[15] != DBNull.Value){ ob.THUCTHU = Convert.ToDouble(reader[15]);}
+				if(reader[16] != DBNull.Value){ ob.TIENVOURCHER = Convert.ToDouble(reader[16]);}
+				if(reader[17] != DBNull.Value){ ob.TONGTHANHTOAN = Convert.ToDouble(reader[17]);}
+				if(reader[18] != DBNull.Value){ ob.MAKHUYENMAI = Convert.ToString(reader[18]);}
+				if(reader[19] != DBNull.Value){ ob.ID_TRANGTHAIPHIEU = Convert.ToInt32(reader[19]);}
+				if(reader[20] != DBNull.Value){ ob.ID_PTTT = Convert.ToInt32(reader[20]);}
+				if(reader[21] != DBNull.Value){ ob.TIENKHACHTRA = Convert.ToDouble(reader[21]);}
+				if(reader[22] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[22]);}
+				if(reader[23] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[23]);}
+				if(reader[24] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[24]);}
+				if(reader[25] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[25]);}
 				list.Add(ob);
 			}
 			command.Dispose();
@@ -139,7 +141,7 @@ namespace Bitas
 			{
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Select ID_PhieuBanHang_H, MaPhieuBanHang, ID_CuaHang, ID_Kho, ID_NhaCC, ID_KhachHang, ID_LoaiXuat, NgayBanHang, GhiChu, PTGiamGia, GiamGiaPT, GiamGiaCoDinh, SoLuong, ThanhTien, ThucThu, TienVourcher, TongThanhToan, MaKhuyenMai, ID_TrangThaiPhieu, ID_PTTT, TienKhachTra, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy From POS_BanHang_H Where "+ keyword +""
+				CommandText = @"Select ID_PhieuBanHang_H, MaPhieuBanHang, ID_KiemKe, ID_CuaHang, ID_Kho, ID_NhaCC, ID_KhachHang, ID_LoaiXuat, NgayBanHang, GhiChu, PTGiamGia, GiamGiaPT, GiamGiaCoDinh, SoLuong, ThanhTien, ThucThu, TienVourcher, TongThanhToan, MaKhuyenMai, ID_TrangThaiPhieu, ID_PTTT, TienKhachTra, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy From POS_BanHang_H Where "+ keyword +""
 			};
 			SqlDataReader reader = command.ExecuteReader();
 			while (reader.Read())
@@ -147,29 +149,30 @@ namespace Bitas
 				Ob_POS_BanHang_H ob = new Ob_POS_BanHang_H();
 				if(reader[0] != DBNull.Value){ ob.ID_PHIEUBANHANG_H = Convert.ToString(reader[0]);}
 				if(reader[1] != DBNull.Value){ ob.MAPHIEUBANHANG = Convert.ToString(reader[1]);}
-				if(reader[2] != DBNull.Value){ ob.ID_CUAHANG = Convert.ToInt32(reader[2]);}
-				if(reader[3] != DBNull.Value){ ob.ID_KHO = Convert.ToInt32(reader[3]);}
-				if(reader[4] != DBNull.Value){ ob.ID_NHACC = Convert.ToInt32(reader[4]);}
-				if(reader[5] != DBNull.Value){ ob.ID_KHACHHANG = Convert.ToString(reader[5]);}
-				if(reader[6] != DBNull.Value){ ob.ID_LOAIXUAT = Convert.ToInt32(reader[6]);}
-				if(reader[7] != DBNull.Value){ ob.NGAYBANHANG = Convert.ToDateTime(reader[7]);}
-				if(reader[8] != DBNull.Value){ ob.GHICHU = Convert.ToString(reader[8]);}
-				if(reader[9] != DBNull.Value){ ob.PTGIAMGIA = Convert.ToDouble(reader[9]);}
-				if(reader[10] != DBNull.Value){ ob.GIAMGIAPT = Convert.ToDouble(reader[10]);}
-				if(reader[11] != DBNull.Value){ ob.GIAMGIACODINH = Convert.ToDouble(reader[11]);}
-				if(reader[12] != DBNull.Value){ ob.SOLUONG = Convert.ToInt32(reader[12]);}
-				if(reader[13] != DBNull.Value){ ob.THANHTIEN = Convert.ToDouble(reader[13]);}
-				if(reader[14] != DBNull.Value){ ob.THUCTHU = Convert.ToDouble(reader[14]);}
-				if(reader[15] != DBNull.Value){ ob.TIENVOURCHER = Convert.ToDouble(reader[15]);}
-				if(reader[16] != DBNull.Value){ ob.TONGTHANHTOAN = Convert.ToDouble(reader[16]);}
-				if(reader[17] != DBNull.Value){ ob.MAKHUYENMAI = Convert.ToString(reader[17]);}
-				if(reader[18] != DBNull.Value){ ob.ID_TRANGTHAIPHIEU = Convert.ToInt32(reader[18]);}
-				if(reader[19] != DBNull.Value){ ob.ID_PTTT = Convert.ToInt32(reader[19]);}
-				if(reader[20] != DBNull.Value){ ob.TIENKHACHTRA = Convert.ToDouble(reader[20]);}
-				if(reader[21] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[21]);}
-				if(reader[22] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[22]);}
-				if(reader[23] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[23]);}
-				if(reader[24] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[24]);}
+				if(reader[2] != DBNull.Value){ ob.ID_KIEMKE = Convert.ToString(reader[2]);}
+				if(reader[3] != DBNull.Value){ ob.ID_CUAHANG = Convert.ToInt32(reader[3]);}
+				if(reader[4] != DBNull.Value){ ob.ID_KHO = Convert.ToInt32(reader[4]);}
+				if(reader[5] != DBNull.Value){ ob.ID_NHACC = Convert.ToInt32(reader[5]);}
+				if(reader[6] != DBNull.Value){ ob.ID_KHACHHANG = Convert.ToString(reader[6]);}
+				if(reader[7] != DBNull.Value){ ob.ID_LOAIXUAT = Convert.ToInt32(reader[7]);}
+				if(reader[8] != DBNull.Value){ ob.NGAYBANHANG = Convert.ToDateTime(reader[8]);}
+				if(reader[9] != DBNull.Value){ ob.GHICHU = Convert.ToString(reader[9]);}
+				if(reader[10] != DBNull.Value){ ob.PTGIAMGIA = Convert.ToDouble(reader[10]);}
+				if(reader[11] != DBNull.Value){ ob.GIAMGIAPT = Convert.ToDouble(reader[11]);}
+				if(reader[12] != DBNull.Value){ ob.GIAMGIACODINH = Convert.ToDouble(reader[12]);}
+				if(reader[13] != DBNull.Value){ ob.SOLUONG = Convert.ToInt32(reader[13]);}
+				if(reader[14] != DBNull.Value){ ob.THANHTIEN = Convert.ToDouble(reader[14]);}
+				if(reader[15] != DBNull.Value){ ob.THUCTHU = Convert.ToDouble(reader[15]);}
+				if(reader[16] != DBNull.Value){ ob.TIENVOURCHER = Convert.ToDouble(reader[16]);}
+				if(reader[17] != DBNull.Value){ ob.TONGTHANHTOAN = Convert.ToDouble(reader[17]);}
+				if(reader[18] != DBNull.Value){ ob.MAKHUYENMAI = Convert.ToString(reader[18]);}
+				if(reader[19] != DBNull.Value){ ob.ID_TRANGTHAIPHIEU = Convert.ToInt32(reader[19]);}
+				if(reader[20] != DBNull.Value){ ob.ID_PTTT = Convert.ToInt32(reader[20]);}
+				if(reader[21] != DBNull.Value){ ob.TIENKHACHTRA = Convert.ToDouble(reader[21]);}
+				if(reader[22] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[22]);}
+				if(reader[23] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[23]);}
+				if(reader[24] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[24]);}
+				if(reader[25] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[25]);}
 				list.Add(ob);
 			}
 			command.Dispose();
@@ -201,29 +204,30 @@ namespace Bitas
 				Ob_POS_BanHang_H ob = new Ob_POS_BanHang_H();
 				if(reader[0] != DBNull.Value){ ob.ID_PHIEUBANHANG_H = Convert.ToString(reader[0]);}
 				if(reader[1] != DBNull.Value){ ob.MAPHIEUBANHANG = Convert.ToString(reader[1]);}
-				if(reader[2] != DBNull.Value){ ob.ID_CUAHANG = Convert.ToInt32(reader[2]);}
-				if(reader[3] != DBNull.Value){ ob.ID_KHO = Convert.ToInt32(reader[3]);}
-				if(reader[4] != DBNull.Value){ ob.ID_NHACC = Convert.ToInt32(reader[4]);}
-				if(reader[5] != DBNull.Value){ ob.ID_KHACHHANG = Convert.ToString(reader[5]);}
-				if(reader[6] != DBNull.Value){ ob.ID_LOAIXUAT = Convert.ToInt32(reader[6]);}
-				if(reader[7] != DBNull.Value){ ob.NGAYBANHANG = Convert.ToDateTime(reader[7]);}
-				if(reader[8] != DBNull.Value){ ob.GHICHU = Convert.ToString(reader[8]);}
-				if(reader[9] != DBNull.Value){ ob.PTGIAMGIA = Convert.ToDouble(reader[9]);}
-				if(reader[10] != DBNull.Value){ ob.GIAMGIAPT = Convert.ToDouble(reader[10]);}
-				if(reader[11] != DBNull.Value){ ob.GIAMGIACODINH = Convert.ToDouble(reader[11]);}
-				if(reader[12] != DBNull.Value){ ob.SOLUONG = Convert.ToInt32(reader[12]);}
-				if(reader[13] != DBNull.Value){ ob.THANHTIEN = Convert.ToDouble(reader[13]);}
-				if(reader[14] != DBNull.Value){ ob.THUCTHU = Convert.ToDouble(reader[14]);}
-				if(reader[15] != DBNull.Value){ ob.TIENVOURCHER = Convert.ToDouble(reader[15]);}
-				if(reader[16] != DBNull.Value){ ob.TONGTHANHTOAN = Convert.ToDouble(reader[16]);}
-				if(reader[17] != DBNull.Value){ ob.MAKHUYENMAI = Convert.ToString(reader[17]);}
-				if(reader[18] != DBNull.Value){ ob.ID_TRANGTHAIPHIEU = Convert.ToInt32(reader[18]);}
-				if(reader[19] != DBNull.Value){ ob.ID_PTTT = Convert.ToInt32(reader[19]);}
-				if(reader[20] != DBNull.Value){ ob.TIENKHACHTRA = Convert.ToDouble(reader[20]);}
-				if(reader[21] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[21]);}
-				if(reader[22] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[22]);}
-				if(reader[23] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[23]);}
-				if(reader[24] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[24]);}
+				if(reader[2] != DBNull.Value){ ob.ID_KIEMKE = Convert.ToString(reader[2]);}
+				if(reader[3] != DBNull.Value){ ob.ID_CUAHANG = Convert.ToInt32(reader[3]);}
+				if(reader[4] != DBNull.Value){ ob.ID_KHO = Convert.ToInt32(reader[4]);}
+				if(reader[5] != DBNull.Value){ ob.ID_NHACC = Convert.ToInt32(reader[5]);}
+				if(reader[6] != DBNull.Value){ ob.ID_KHACHHANG = Convert.ToString(reader[6]);}
+				if(reader[7] != DBNull.Value){ ob.ID_LOAIXUAT = Convert.ToInt32(reader[7]);}
+				if(reader[8] != DBNull.Value){ ob.NGAYBANHANG = Convert.ToDateTime(reader[8]);}
+				if(reader[9] != DBNull.Value){ ob.GHICHU = Convert.ToString(reader[9]);}
+				if(reader[10] != DBNull.Value){ ob.PTGIAMGIA = Convert.ToDouble(reader[10]);}
+				if(reader[11] != DBNull.Value){ ob.GIAMGIAPT = Convert.ToDouble(reader[11]);}
+				if(reader[12] != DBNull.Value){ ob.GIAMGIACODINH = Convert.ToDouble(reader[12]);}
+				if(reader[13] != DBNull.Value){ ob.SOLUONG = Convert.ToInt32(reader[13]);}
+				if(reader[14] != DBNull.Value){ ob.THANHTIEN = Convert.ToDouble(reader[14]);}
+				if(reader[15] != DBNull.Value){ ob.THUCTHU = Convert.ToDouble(reader[15]);}
+				if(reader[16] != DBNull.Value){ ob.TIENVOURCHER = Convert.ToDouble(reader[16]);}
+				if(reader[17] != DBNull.Value){ ob.TONGTHANHTOAN = Convert.ToDouble(reader[17]);}
+				if(reader[18] != DBNull.Value){ ob.MAKHUYENMAI = Convert.ToString(reader[18]);}
+				if(reader[19] != DBNull.Value){ ob.ID_TRANGTHAIPHIEU = Convert.ToInt32(reader[19]);}
+				if(reader[20] != DBNull.Value){ ob.ID_PTTT = Convert.ToInt32(reader[20]);}
+				if(reader[21] != DBNull.Value){ ob.TIENKHACHTRA = Convert.ToDouble(reader[21]);}
+				if(reader[22] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[22]);}
+				if(reader[23] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[23]);}
+				if(reader[24] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[24]);}
+				if(reader[25] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[25]);}
 				list.Add(ob);
 			}
 			command.Dispose();
@@ -246,7 +250,7 @@ namespace Bitas
 			{
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Select ID_PhieuBanHang_H, MaPhieuBanHang, ID_CuaHang, ID_Kho, ID_NhaCC, ID_KhachHang, ID_LoaiXuat, NgayBanHang, GhiChu, PTGiamGia, GiamGiaPT, GiamGiaCoDinh, SoLuong, ThanhTien, ThucThu, TienVourcher, TongThanhToan, MaKhuyenMai, ID_TrangThaiPhieu, ID_PTTT, TienKhachTra, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy From POS_BanHang_H Where "+ keyword +""
+				CommandText = @"Select ID_PhieuBanHang_H, MaPhieuBanHang, ID_KiemKe, ID_CuaHang, ID_Kho, ID_NhaCC, ID_KhachHang, ID_LoaiXuat, NgayBanHang, GhiChu, PTGiamGia, GiamGiaPT, GiamGiaCoDinh, SoLuong, ThanhTien, ThucThu, TienVourcher, TongThanhToan, MaKhuyenMai, ID_TrangThaiPhieu, ID_PTTT, TienKhachTra, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy From POS_BanHang_H Where "+ keyword +""
 			};
 			SqlDataReader reader = command.ExecuteReader();
 			int num = 0;
@@ -255,29 +259,30 @@ namespace Bitas
 				num++;
 				if(reader[0] != DBNull.Value){ ob.ID_PHIEUBANHANG_H = Convert.ToString(reader[0]);}
 				if(reader[1] != DBNull.Value){ ob.MAPHIEUBANHANG = Convert.ToString(reader[1]);}
-				if(reader[2] != DBNull.Value){ ob.ID_CUAHANG = Convert.ToInt32(reader[2]);}
-				if(reader[3] != DBNull.Value){ ob.ID_KHO = Convert.ToInt32(reader[3]);}
-				if(reader[4] != DBNull.Value){ ob.ID_NHACC = Convert.ToInt32(reader[4]);}
-				if(reader[5] != DBNull.Value){ ob.ID_KHACHHANG = Convert.ToString(reader[5]);}
-				if(reader[6] != DBNull.Value){ ob.ID_LOAIXUAT = Convert.ToInt32(reader[6]);}
-				if(reader[7] != DBNull.Value){ ob.NGAYBANHANG = Convert.ToDateTime(reader[7]);}
-				if(reader[8] != DBNull.Value){ ob.GHICHU = Convert.ToString(reader[8]);}
-				if(reader[9] != DBNull.Value){ ob.PTGIAMGIA = Convert.ToDouble(reader[9]);}
-				if(reader[10] != DBNull.Value){ ob.GIAMGIAPT = Convert.ToDouble(reader[10]);}
-				if(reader[11] != DBNull.Value){ ob.GIAMGIACODINH = Convert.ToDouble(reader[11]);}
-				if(reader[12] != DBNull.Value){ ob.SOLUONG = Convert.ToInt32(reader[12]);}
-				if(reader[13] != DBNull.Value){ ob.THANHTIEN = Convert.ToDouble(reader[13]);}
-				if(reader[14] != DBNull.Value){ ob.THUCTHU = Convert.ToDouble(reader[14]);}
-				if(reader[15] != DBNull.Value){ ob.TIENVOURCHER = Convert.ToDouble(reader[15]);}
-				if(reader[16] != DBNull.Value){ ob.TONGTHANHTOAN = Convert.ToDouble(reader[16]);}
-				if(reader[17] != DBNull.Value){ ob.MAKHUYENMAI = Convert.ToString(reader[17]);}
-				if(reader[18] != DBNull.Value){ ob.ID_TRANGTHAIPHIEU = Convert.ToInt32(reader[18]);}
-				if(reader[19] != DBNull.Value){ ob.ID_PTTT = Convert.ToInt32(reader[19]);}
-				if(reader[20] != DBNull.Value){ ob.TIENKHACHTRA = Convert.ToDouble(reader[20]);}
-				if(reader[21] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[21]);}
-				if(reader[22] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[22]);}
-				if(reader[23] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[23]);}
-				if(reader[24] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[24]);}
+				if(reader[2] != DBNull.Value){ ob.ID_KIEMKE = Convert.ToString(reader[2]);}
+				if(reader[3] != DBNull.Value){ ob.ID_CUAHANG = Convert.ToInt32(reader[3]);}
+				if(reader[4] != DBNull.Value){ ob.ID_KHO = Convert.ToInt32(reader[4]);}
+				if(reader[5] != DBNull.Value){ ob.ID_NHACC = Convert.ToInt32(reader[5]);}
+				if(reader[6] != DBNull.Value){ ob.ID_KHACHHANG = Convert.ToString(reader[6]);}
+				if(reader[7] != DBNull.Value){ ob.ID_LOAIXUAT = Convert.ToInt32(reader[7]);}
+				if(reader[8] != DBNull.Value){ ob.NGAYBANHANG = Convert.ToDateTime(reader[8]);}
+				if(reader[9] != DBNull.Value){ ob.GHICHU = Convert.ToString(reader[9]);}
+				if(reader[10] != DBNull.Value){ ob.PTGIAMGIA = Convert.ToDouble(reader[10]);}
+				if(reader[11] != DBNull.Value){ ob.GIAMGIAPT = Convert.ToDouble(reader[11]);}
+				if(reader[12] != DBNull.Value){ ob.GIAMGIACODINH = Convert.ToDouble(reader[12]);}
+				if(reader[13] != DBNull.Value){ ob.SOLUONG = Convert.ToInt32(reader[13]);}
+				if(reader[14] != DBNull.Value){ ob.THANHTIEN = Convert.ToDouble(reader[14]);}
+				if(reader[15] != DBNull.Value){ ob.THUCTHU = Convert.ToDouble(reader[15]);}
+				if(reader[16] != DBNull.Value){ ob.TIENVOURCHER = Convert.ToDouble(reader[16]);}
+				if(reader[17] != DBNull.Value){ ob.TONGTHANHTOAN = Convert.ToDouble(reader[17]);}
+				if(reader[18] != DBNull.Value){ ob.MAKHUYENMAI = Convert.ToString(reader[18]);}
+				if(reader[19] != DBNull.Value){ ob.ID_TRANGTHAIPHIEU = Convert.ToInt32(reader[19]);}
+				if(reader[20] != DBNull.Value){ ob.ID_PTTT = Convert.ToInt32(reader[20]);}
+				if(reader[21] != DBNull.Value){ ob.TIENKHACHTRA = Convert.ToDouble(reader[21]);}
+				if(reader[22] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[22]);}
+				if(reader[23] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[23]);}
+				if(reader[24] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[24]);}
+				if(reader[25] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[25]);}
 			}
 			if (num == 0)
 			{
@@ -307,13 +312,14 @@ namespace Bitas
 			{
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Insert Into POS_BanHang_H (ID_PhieuBanHang_H, MaPhieuBanHang, ID_CuaHang, ID_Kho, ID_NhaCC, ID_KhachHang, ID_LoaiXuat, NgayBanHang, GhiChu, PTGiamGia, GiamGiaPT, GiamGiaCoDinh, SoLuong, ThanhTien, ThucThu, TienVourcher, TongThanhToan, MaKhuyenMai, ID_TrangThaiPhieu, ID_PTTT, TienKhachTra, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy) Values(@ID_PhieuBanHang_H, @MaPhieuBanHang, @ID_CuaHang, @ID_Kho, @ID_NhaCC, @ID_KhachHang, @ID_LoaiXuat, @NgayBanHang, @GhiChu, @PTGiamGia, @GiamGiaPT, @GiamGiaCoDinh, @SoLuong, @ThanhTien, @ThucThu, @TienVourcher, @TongThanhToan, @MaKhuyenMai, @ID_TrangThaiPhieu, @ID_PTTT, @TienKhachTra, @CreatedTime, @CreatedBy, @ModifiedTime, @ModifiedBy)"
+				CommandText = @"Insert Into POS_BanHang_H (ID_PhieuBanHang_H, MaPhieuBanHang, ID_KiemKe, ID_CuaHang, ID_Kho, ID_NhaCC, ID_KhachHang, ID_LoaiXuat, NgayBanHang, GhiChu, PTGiamGia, GiamGiaPT, GiamGiaCoDinh, SoLuong, ThanhTien, ThucThu, TienVourcher, TongThanhToan, MaKhuyenMai, ID_TrangThaiPhieu, ID_PTTT, TienKhachTra, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy) Values(@ID_PhieuBanHang_H, @MaPhieuBanHang, @ID_KiemKe, @ID_CuaHang, @ID_Kho, @ID_NhaCC, @ID_KhachHang, @ID_LoaiXuat, @NgayBanHang, @GhiChu, @PTGiamGia, @GiamGiaPT, @GiamGiaCoDinh, @SoLuong, @ThanhTien, @ThucThu, @TienVourcher, @TongThanhToan, @MaKhuyenMai, @ID_TrangThaiPhieu, @ID_PTTT, @TienKhachTra, @CreatedTime, @CreatedBy, @ModifiedTime, @ModifiedBy)"
 			};
 			command.Parameters.Add("ID_PhieuBanHang_H", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_PHIEUBANHANG_H);
 			if (ob.MAPHIEUBANHANG.Trim() == "")
 				command.Parameters.Add("MaPhieuBanHang", SqlDbType.VarChar).Value  = DBNull.Value;
 			else
 				command.Parameters.Add("MaPhieuBanHang", SqlDbType.VarChar).Value = ob.MAPHIEUBANHANG;
+			command.Parameters.Add("ID_KiemKe", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_KIEMKE);
 			command.Parameters.Add("ID_CuaHang", SqlDbType.Int).Value = ob.ID_CUAHANG;
 			command.Parameters.Add("ID_Kho", SqlDbType.Int).Value = ob.ID_KHO;
 			command.Parameters.Add("ID_NhaCC", SqlDbType.Int).Value = ob.ID_NHACC;
@@ -386,13 +392,14 @@ namespace Bitas
 			{
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Insert Into POS_BanHang_H (ID_PhieuBanHang_H, MaPhieuBanHang, ID_CuaHang, ID_Kho, ID_NhaCC, ID_KhachHang, ID_LoaiXuat, NgayBanHang, GhiChu, PTGiamGia, GiamGiaPT, GiamGiaCoDinh, SoLuong, ThanhTien, ThucThu, TienVourcher, TongThanhToan, MaKhuyenMai, ID_TrangThaiPhieu, ID_PTTT, TienKhachTra, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy) Values(@ID_PhieuBanHang_H, @MaPhieuBanHang, @ID_CuaHang, @ID_Kho, @ID_NhaCC, @ID_KhachHang, @ID_LoaiXuat, @NgayBanHang, @GhiChu, @PTGiamGia, @GiamGiaPT, @GiamGiaCoDinh, @SoLuong, @ThanhTien, @ThucThu, @TienVourcher, @TongThanhToan, @MaKhuyenMai, @ID_TrangThaiPhieu, @ID_PTTT, @TienKhachTra, @CreatedTime, @CreatedBy, @ModifiedTime, @ModifiedBy)Select @@IDENTITY"
+				CommandText = @"Insert Into POS_BanHang_H (ID_PhieuBanHang_H, MaPhieuBanHang, ID_KiemKe, ID_CuaHang, ID_Kho, ID_NhaCC, ID_KhachHang, ID_LoaiXuat, NgayBanHang, GhiChu, PTGiamGia, GiamGiaPT, GiamGiaCoDinh, SoLuong, ThanhTien, ThucThu, TienVourcher, TongThanhToan, MaKhuyenMai, ID_TrangThaiPhieu, ID_PTTT, TienKhachTra, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy) Values(@ID_PhieuBanHang_H, @MaPhieuBanHang, @ID_KiemKe, @ID_CuaHang, @ID_Kho, @ID_NhaCC, @ID_KhachHang, @ID_LoaiXuat, @NgayBanHang, @GhiChu, @PTGiamGia, @GiamGiaPT, @GiamGiaCoDinh, @SoLuong, @ThanhTien, @ThucThu, @TienVourcher, @TongThanhToan, @MaKhuyenMai, @ID_TrangThaiPhieu, @ID_PTTT, @TienKhachTra, @CreatedTime, @CreatedBy, @ModifiedTime, @ModifiedBy)Select @@IDENTITY"
 			};
 			command.Parameters.Add("ID_PhieuBanHang_H", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_PHIEUBANHANG_H);
 			if (ob.MAPHIEUBANHANG.Trim() == "")
 				command.Parameters.Add("MaPhieuBanHang", SqlDbType.VarChar).Value  = DBNull.Value;
 			else
 				command.Parameters.Add("MaPhieuBanHang", SqlDbType.VarChar).Value = ob.MAPHIEUBANHANG;
+			command.Parameters.Add("ID_KiemKe", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_KIEMKE);
 			command.Parameters.Add("ID_CuaHang", SqlDbType.Int).Value = ob.ID_CUAHANG;
 			command.Parameters.Add("ID_Kho", SqlDbType.Int).Value = ob.ID_KHO;
 			command.Parameters.Add("ID_NhaCC", SqlDbType.Int).Value = ob.ID_NHACC;
@@ -466,21 +473,31 @@ namespace Bitas
 			SqlCommand command = new SqlCommand {
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Update POS_BanHang_H Set MaPhieuBanHang=@MaPhieuBanHang, ID_CuaHang=@ID_CuaHang, ID_Kho=@ID_Kho, ID_NhaCC=@ID_NhaCC, ID_KhachHang=@ID_KhachHang, ID_LoaiXuat=@ID_LoaiXuat, NgayBanHang=@NgayBanHang, GhiChu=@GhiChu, PTGiamGia=@PTGiamGia, GiamGiaPT=@GiamGiaPT, GiamGiaCoDinh=@GiamGiaCoDinh, SoLuong=@SoLuong, ThanhTien=@ThanhTien, ThucThu=@ThucThu, TienVourcher=@TienVourcher, TongThanhToan=@TongThanhToan, MaKhuyenMai=@MaKhuyenMai, ID_TrangThaiPhieu=@ID_TrangThaiPhieu, ID_PTTT=@ID_PTTT, TienKhachTra=@TienKhachTra, CreatedTime=@CreatedTime, CreatedBy=@CreatedBy, ModifiedTime=@ModifiedTime, ModifiedBy=@ModifiedBy Where ID_PhieuBanHang_H=@ID_PhieuBanHang_H"
+				CommandText = @"Update POS_BanHang_H Set MaPhieuBanHang=@MaPhieuBanHang, ID_KiemKe=@ID_KiemKe, ID_CuaHang=@ID_CuaHang, ID_Kho=@ID_Kho, ID_NhaCC=@ID_NhaCC, ID_KhachHang=@ID_KhachHang, ID_LoaiXuat=@ID_LoaiXuat, NgayBanHang=@NgayBanHang, GhiChu=@GhiChu, PTGiamGia=@PTGiamGia, GiamGiaPT=@GiamGiaPT, GiamGiaCoDinh=@GiamGiaCoDinh, SoLuong=@SoLuong, ThanhTien=@ThanhTien, ThucThu=@ThucThu, TienVourcher=@TienVourcher, TongThanhToan=@TongThanhToan, MaKhuyenMai=@MaKhuyenMai, ID_TrangThaiPhieu=@ID_TrangThaiPhieu, ID_PTTT=@ID_PTTT, TienKhachTra=@TienKhachTra, CreatedTime=@CreatedTime, CreatedBy=@CreatedBy, ModifiedTime=@ModifiedTime, ModifiedBy=@ModifiedBy Where ID_PhieuBanHang_H=@ID_PhieuBanHang_H"
 			};
 			command.Parameters.Add("ID_PhieuBanHang_H", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_PHIEUBANHANG_H);
 			if (ob.MAPHIEUBANHANG.Trim() == "")
 				command.Parameters.Add("MaPhieuBanHang", SqlDbType.VarChar).Value  = DBNull.Value;
 			else
 				command.Parameters.Add("MaPhieuBanHang", SqlDbType.VarChar).Value = ob.MAPHIEUBANHANG;
-			command.Parameters.Add("ID_CuaHang", SqlDbType.Int).Value = ob.ID_CUAHANG;
+            if (ob.ID_KIEMKE == "")
+                command.Parameters.Add("ID_KiemKe", SqlDbType.UniqueIdentifier).Value = DBNull.Value;
+            else
+			    command.Parameters.Add("ID_KiemKe", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_KIEMKE);
+            if (ob.ID_CUAHANG == 0)
+                command.Parameters.Add("ID_CuaHang", SqlDbType.Int).Value = DBNull.Value;
+            else
+                command.Parameters.Add("ID_CuaHang", SqlDbType.Int).Value = ob.ID_CUAHANG;
 			command.Parameters.Add("ID_Kho", SqlDbType.Int).Value = ob.ID_KHO;
             if (ob.ID_NHACC == 0)
-    			command.Parameters.Add("ID_NhaCC", SqlDbType.Int).Value = DBNull.Value;
+                command.Parameters.Add("ID_NhaCC", SqlDbType.Int).Value = DBNull.Value;
             else
-                command.Parameters.Add("ID_NhaCC", SqlDbType.Int).Value = ob.ID_NHACC;
-			command.Parameters.Add("ID_KhachHang", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_KHACHHANG);
-			command.Parameters.Add("ID_LoaiXuat", SqlDbType.Int).Value = ob.ID_LOAIXUAT;
+			    command.Parameters.Add("ID_NhaCC", SqlDbType.Int).Value = ob.ID_NHACC;
+            if (ob.ID_KHACHHANG == "")
+			    command.Parameters.Add("ID_KhachHang", SqlDbType.UniqueIdentifier).Value = DBNull.Value;
+			else
+                command.Parameters.Add("ID_KhachHang", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_KHACHHANG);
+            command.Parameters.Add("ID_LoaiXuat", SqlDbType.Int).Value = ob.ID_LOAIXUAT;
 			if (ob.NGAYBANHANG == DateTime.MinValue)
 				command.Parameters.Add("NgayBanHang", SqlDbType.DateTime).Value = DBNull.Value;
 			else

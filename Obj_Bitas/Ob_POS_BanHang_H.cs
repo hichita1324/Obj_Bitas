@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 
-//CreateTimes : 22/06/2018 15:45:12.PM
+//CreateTimes : 27/06/2018 10:31:53.AM
 
 namespace Bitas
 {
@@ -13,6 +13,7 @@ namespace Bitas
 	{
 		private string id_phieubanhang_h;
 		private string maphieubanhang;
+		private string id_kiemke;
 		private int id_cuahang;
 		private int id_kho;
 		private int id_nhacc;
@@ -38,6 +39,7 @@ namespace Bitas
 		private string modifiedby;
 		public string ID_PHIEUBANHANG_H{ get { return id_phieubanhang_h; } set { id_phieubanhang_h = value; }}
 		public string MAPHIEUBANHANG{ get { return maphieubanhang; } set { maphieubanhang = value; }}
+		public string ID_KIEMKE{ get { return id_kiemke; } set { id_kiemke = value; }}
 		public int ID_CUAHANG{ get { return id_cuahang; } set { id_cuahang = value; }}
 		public int ID_KHO{ get { return id_kho; } set { id_kho = value; }}
 		public int ID_NHACC{ get { return id_nhacc; } set { id_nhacc = value; }}
@@ -66,6 +68,7 @@ namespace Bitas
 		{
 			id_phieubanhang_h = "";
 			maphieubanhang = "";
+			id_kiemke = "";
 			id_cuahang = 0;
 			id_kho = 0;
 			id_nhacc = 0;
@@ -90,10 +93,11 @@ namespace Bitas
 			modifiedby = "";
 		}
 
-		public Ob_POS_BanHang_H( string new_id_phieubanhang_h, string new_maphieubanhang, int new_id_cuahang, int new_id_kho, int new_id_nhacc, string new_id_khachhang, int new_id_loaixuat, DateTime new_ngaybanhang, string new_ghichu, double new_ptgiamgia, double new_giamgiapt, double new_giamgiacodinh, int new_soluong, double new_thanhtien, double new_thucthu, double new_tienvourcher, double new_tongthanhtoan, string new_makhuyenmai, int new_id_trangthaiphieu, int new_id_pttt, double new_tienkhachtra, DateTime new_createdtime, string new_createdby, DateTime new_modifiedtime, string new_modifiedby)	
+		public Ob_POS_BanHang_H( string new_id_phieubanhang_h, string new_maphieubanhang, string new_id_kiemke, int new_id_cuahang, int new_id_kho, int new_id_nhacc, string new_id_khachhang, int new_id_loaixuat, DateTime new_ngaybanhang, string new_ghichu, double new_ptgiamgia, double new_giamgiapt, double new_giamgiacodinh, int new_soluong, double new_thanhtien, double new_thucthu, double new_tienvourcher, double new_tongthanhtoan, string new_makhuyenmai, int new_id_trangthaiphieu, int new_id_pttt, double new_tienkhachtra, DateTime new_createdtime, string new_createdby, DateTime new_modifiedtime, string new_modifiedby)	
 		{
 			id_phieubanhang_h = new_id_phieubanhang_h;
 			maphieubanhang = new_maphieubanhang;
+			id_kiemke = new_id_kiemke;
 			id_cuahang = new_id_cuahang;
 			id_kho = new_id_kho;
 			id_nhacc = new_id_nhacc;
@@ -123,6 +127,7 @@ namespace Bitas
 		{
 			id_phieubanhang_h = newOb.ID_PHIEUBANHANG_H;
 			maphieubanhang = newOb.MAPHIEUBANHANG;
+			id_kiemke = newOb.ID_KIEMKE;
 			id_cuahang = newOb.ID_CUAHANG;
 			id_kho = newOb.ID_KHO;
 			id_nhacc = newOb.ID_NHACC;
