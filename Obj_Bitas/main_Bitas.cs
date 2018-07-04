@@ -58,6 +58,8 @@ namespace Bitas
         public static KeysList_POS_KhuyenMaiKhoangGiaSanPham keys_POS_KhuyenMaiKhoangGiaSanPham = new KeysList_POS_KhuyenMaiKhoangGiaSanPham();
         public static KeysList_HT_NguoiDung_CuaHang keys_HT_NguoiDung_CuaHang = new KeysList_HT_NguoiDung_CuaHang();
         public static KeysList_POS_DM_KhachHang keys_POS_DM_KhachHang = new KeysList_POS_DM_KhachHang();
+        public static KeysList_POS_KiemKe_H keys_POS_KiemKe_H = new KeysList_POS_KiemKe_H();
+        public static KeysList_POS_KiemKe_L keys_POS_KiemKe_L = new KeysList_POS_KiemKe_L();
         public static SQLServer SQL = new SQLServer();
         public static Multi Multi = new Multi();
 	}

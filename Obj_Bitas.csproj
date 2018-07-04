@@ -114,6 +114,8 @@
     <Compile Include="Obj_Bitas\KeysList_POS_KhuyenMaiKhoangGiaHoaDon.cs" />
     <Compile Include="Obj_Bitas\KeysList_POS_KhuyenMaiKhoangGiaSanPham.cs" />
     <Compile Include="Obj_Bitas\KeysList_POS_KhuyenMaiLoaiHang.cs" />
+    <Compile Include="Obj_Bitas\KeysList_POS_KiemKe_H.cs" />
+    <Compile Include="Obj_Bitas\KeysList_POS_KiemKe_L.cs" />
     <Compile Include="Obj_Bitas\KeysList_POS_NhapHang_H.cs" />
     <Compile Include="Obj_Bitas\KeysList_POS_NhapHang_L.cs" />
     <Compile Include="Obj_Bitas\KeysList_SP_BangGia.cs" />
@@ -193,6 +195,8 @@
     <Compile Include="Obj_Bitas\Ob_POS_KhuyenMaiKhoangGiaHoaDon.cs" />
     <Compile Include="Obj_Bitas\Ob_POS_KhuyenMaiKhoangGiaSanPham.cs" />
     <Compile Include="Obj_Bitas\Ob_POS_KhuyenMaiLoaiHang.cs" />
+    <Compile Include="Obj_Bitas\Ob_POS_KiemKe_H.cs" />
+    <Compile Include="Obj_Bitas\Ob_POS_KiemKe_L.cs" />
     <Compile Include="Obj_Bitas\Ob_POS_NhapHang_H.cs" />
     <Compile Include="Obj_Bitas\Ob_POS_NhapHang_L.cs" />
     <Compile Include="Obj_Bitas\Ob_SP_BangGia.cs" />
