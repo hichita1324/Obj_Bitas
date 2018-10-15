@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data.SqlTypes;
 
-//CreateTimes : 27/06/2018 10:31:53.AM
+//CreateTimes : 10/09/2018 10:03:31.AM
 
 namespace Bitas
 {
@@ -33,7 +33,7 @@ namespace Bitas
 			{
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Select ID_PhieuBanHang_H, MaPhieuBanHang, ID_KiemKe, ID_CuaHang, ID_Kho, ID_NhaCC, ID_KhachHang, ID_LoaiXuat, NgayBanHang, GhiChu, PTGiamGia, GiamGiaPT, GiamGiaCoDinh, SoLuong, ThanhTien, ThucThu, TienVourcher, TongThanhToan, MaKhuyenMai, ID_TrangThaiPhieu, ID_PTTT, TienKhachTra, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy From POS_BanHang_H"
+				CommandText = @"Select ID_PhieuBanHang_H, MaPhieuBanHang, ID_KiemKe, ID_CuaHang, ID_Kho, ID_NhaCC, ID_KhachHang, ID_LoaiXuat, NgayBanHang, GhiChu, PTGiamGia, GiamGiaPT, GiamGiaCoDinh, SoLuong, ThanhTien, ThucThu, TienVourcher, TongThanhToan, MaKhuyenMai, ID_TrangThaiPhieu, ID_PTTT, TienKhachTra, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy, MaDonHang From POS_BanHang_H"
 			};
 			SqlDataReader reader = command.ExecuteReader();
 			while (reader.Read())
@@ -65,6 +65,7 @@ namespace Bitas
 				if(reader[23] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[23]);}
 				if(reader[24] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[24]);}
 				if(reader[25] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[25]);}
+				if(reader[26] != DBNull.Value){ ob.MADONHANG = Convert.ToString(reader[26]);}
 				list.Add(ob);
 			}
 			command.Dispose();
@@ -119,6 +120,7 @@ namespace Bitas
 				if(reader[23] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[23]);}
 				if(reader[24] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[24]);}
 				if(reader[25] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[25]);}
+				if(reader[26] != DBNull.Value){ ob.MADONHANG = Convert.ToString(reader[26]);}
 				list.Add(ob);
 			}
 			command.Dispose();
@@ -141,7 +143,7 @@ namespace Bitas
 			{
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Select ID_PhieuBanHang_H, MaPhieuBanHang, ID_KiemKe, ID_CuaHang, ID_Kho, ID_NhaCC, ID_KhachHang, ID_LoaiXuat, NgayBanHang, GhiChu, PTGiamGia, GiamGiaPT, GiamGiaCoDinh, SoLuong, ThanhTien, ThucThu, TienVourcher, TongThanhToan, MaKhuyenMai, ID_TrangThaiPhieu, ID_PTTT, TienKhachTra, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy From POS_BanHang_H Where "+ keyword +""
+				CommandText = @"Select ID_PhieuBanHang_H, MaPhieuBanHang, ID_KiemKe, ID_CuaHang, ID_Kho, ID_NhaCC, ID_KhachHang, ID_LoaiXuat, NgayBanHang, GhiChu, PTGiamGia, GiamGiaPT, GiamGiaCoDinh, SoLuong, ThanhTien, ThucThu, TienVourcher, TongThanhToan, MaKhuyenMai, ID_TrangThaiPhieu, ID_PTTT, TienKhachTra, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy, MaDonHang From POS_BanHang_H Where "+ keyword +""
 			};
 			SqlDataReader reader = command.ExecuteReader();
 			while (reader.Read())
@@ -173,6 +175,7 @@ namespace Bitas
 				if(reader[23] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[23]);}
 				if(reader[24] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[24]);}
 				if(reader[25] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[25]);}
+				if(reader[26] != DBNull.Value){ ob.MADONHANG = Convert.ToString(reader[26]);}
 				list.Add(ob);
 			}
 			command.Dispose();
@@ -228,6 +231,7 @@ namespace Bitas
 				if(reader[23] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[23]);}
 				if(reader[24] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[24]);}
 				if(reader[25] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[25]);}
+				if(reader[26] != DBNull.Value){ ob.MADONHANG = Convert.ToString(reader[26]);}
 				list.Add(ob);
 			}
 			command.Dispose();
@@ -250,7 +254,7 @@ namespace Bitas
 			{
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Select ID_PhieuBanHang_H, MaPhieuBanHang, ID_KiemKe, ID_CuaHang, ID_Kho, ID_NhaCC, ID_KhachHang, ID_LoaiXuat, NgayBanHang, GhiChu, PTGiamGia, GiamGiaPT, GiamGiaCoDinh, SoLuong, ThanhTien, ThucThu, TienVourcher, TongThanhToan, MaKhuyenMai, ID_TrangThaiPhieu, ID_PTTT, TienKhachTra, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy From POS_BanHang_H Where "+ keyword +""
+				CommandText = @"Select ID_PhieuBanHang_H, MaPhieuBanHang, ID_KiemKe, ID_CuaHang, ID_Kho, ID_NhaCC, ID_KhachHang, ID_LoaiXuat, NgayBanHang, GhiChu, PTGiamGia, GiamGiaPT, GiamGiaCoDinh, SoLuong, ThanhTien, ThucThu, TienVourcher, TongThanhToan, MaKhuyenMai, ID_TrangThaiPhieu, ID_PTTT, TienKhachTra, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy, MaDonHang From POS_BanHang_H Where "+ keyword +""
 			};
 			SqlDataReader reader = command.ExecuteReader();
 			int num = 0;
@@ -283,6 +287,7 @@ namespace Bitas
 				if(reader[23] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[23]);}
 				if(reader[24] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[24]);}
 				if(reader[25] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[25]);}
+				if(reader[26] != DBNull.Value){ ob.MADONHANG = Convert.ToString(reader[26]);}
 			}
 			if (num == 0)
 			{
@@ -312,7 +317,7 @@ namespace Bitas
 			{
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Insert Into POS_BanHang_H (ID_PhieuBanHang_H, MaPhieuBanHang, ID_KiemKe, ID_CuaHang, ID_Kho, ID_NhaCC, ID_KhachHang, ID_LoaiXuat, NgayBanHang, GhiChu, PTGiamGia, GiamGiaPT, GiamGiaCoDinh, SoLuong, ThanhTien, ThucThu, TienVourcher, TongThanhToan, MaKhuyenMai, ID_TrangThaiPhieu, ID_PTTT, TienKhachTra, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy) Values(@ID_PhieuBanHang_H, @MaPhieuBanHang, @ID_KiemKe, @ID_CuaHang, @ID_Kho, @ID_NhaCC, @ID_KhachHang, @ID_LoaiXuat, @NgayBanHang, @GhiChu, @PTGiamGia, @GiamGiaPT, @GiamGiaCoDinh, @SoLuong, @ThanhTien, @ThucThu, @TienVourcher, @TongThanhToan, @MaKhuyenMai, @ID_TrangThaiPhieu, @ID_PTTT, @TienKhachTra, @CreatedTime, @CreatedBy, @ModifiedTime, @ModifiedBy)"
+				CommandText = @"Insert Into POS_BanHang_H (ID_PhieuBanHang_H, MaPhieuBanHang, ID_KiemKe, ID_CuaHang, ID_Kho, ID_NhaCC, ID_KhachHang, ID_LoaiXuat, NgayBanHang, GhiChu, PTGiamGia, GiamGiaPT, GiamGiaCoDinh, SoLuong, ThanhTien, ThucThu, TienVourcher, TongThanhToan, MaKhuyenMai, ID_TrangThaiPhieu, ID_PTTT, TienKhachTra, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy, MaDonHang) Values(@ID_PhieuBanHang_H, @MaPhieuBanHang, @ID_KiemKe, @ID_CuaHang, @ID_Kho, @ID_NhaCC, @ID_KhachHang, @ID_LoaiXuat, @NgayBanHang, @GhiChu, @PTGiamGia, @GiamGiaPT, @GiamGiaCoDinh, @SoLuong, @ThanhTien, @ThucThu, @TienVourcher, @TongThanhToan, @MaKhuyenMai, @ID_TrangThaiPhieu, @ID_PTTT, @TienKhachTra, @CreatedTime, @CreatedBy, @ModifiedTime, @ModifiedBy, @MaDonHang)"
 			};
 			command.Parameters.Add("ID_PhieuBanHang_H", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_PHIEUBANHANG_H);
 			if (ob.MAPHIEUBANHANG.Trim() == "")
@@ -364,6 +369,10 @@ namespace Bitas
 				command.Parameters.Add("ModifiedBy", SqlDbType.VarChar).Value  = DBNull.Value;
 			else
 				command.Parameters.Add("ModifiedBy", SqlDbType.VarChar).Value = ob.MODIFIEDBY;
+			if (ob.MADONHANG.Trim() == "")
+				command.Parameters.Add("MaDonHang", SqlDbType.VarChar).Value  = DBNull.Value;
+			else
+				command.Parameters.Add("MaDonHang", SqlDbType.VarChar).Value = ob.MADONHANG;
 			try
 			{
 				command.ExecuteNonQuery();
@@ -392,7 +401,7 @@ namespace Bitas
 			{
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Insert Into POS_BanHang_H (ID_PhieuBanHang_H, MaPhieuBanHang, ID_KiemKe, ID_CuaHang, ID_Kho, ID_NhaCC, ID_KhachHang, ID_LoaiXuat, NgayBanHang, GhiChu, PTGiamGia, GiamGiaPT, GiamGiaCoDinh, SoLuong, ThanhTien, ThucThu, TienVourcher, TongThanhToan, MaKhuyenMai, ID_TrangThaiPhieu, ID_PTTT, TienKhachTra, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy) Values(@ID_PhieuBanHang_H, @MaPhieuBanHang, @ID_KiemKe, @ID_CuaHang, @ID_Kho, @ID_NhaCC, @ID_KhachHang, @ID_LoaiXuat, @NgayBanHang, @GhiChu, @PTGiamGia, @GiamGiaPT, @GiamGiaCoDinh, @SoLuong, @ThanhTien, @ThucThu, @TienVourcher, @TongThanhToan, @MaKhuyenMai, @ID_TrangThaiPhieu, @ID_PTTT, @TienKhachTra, @CreatedTime, @CreatedBy, @ModifiedTime, @ModifiedBy)Select @@IDENTITY"
+				CommandText = @"Insert Into POS_BanHang_H (ID_PhieuBanHang_H, MaPhieuBanHang, ID_KiemKe, ID_CuaHang, ID_Kho, ID_NhaCC, ID_KhachHang, ID_LoaiXuat, NgayBanHang, GhiChu, PTGiamGia, GiamGiaPT, GiamGiaCoDinh, SoLuong, ThanhTien, ThucThu, TienVourcher, TongThanhToan, MaKhuyenMai, ID_TrangThaiPhieu, ID_PTTT, TienKhachTra, CreatedTime, CreatedBy, ModifiedTime, ModifiedBy, MaDonHang) Values(@ID_PhieuBanHang_H, @MaPhieuBanHang, @ID_KiemKe, @ID_CuaHang, @ID_Kho, @ID_NhaCC, @ID_KhachHang, @ID_LoaiXuat, @NgayBanHang, @GhiChu, @PTGiamGia, @GiamGiaPT, @GiamGiaCoDinh, @SoLuong, @ThanhTien, @ThucThu, @TienVourcher, @TongThanhToan, @MaKhuyenMai, @ID_TrangThaiPhieu, @ID_PTTT, @TienKhachTra, @CreatedTime, @CreatedBy, @ModifiedTime, @ModifiedBy, @MaDonHang)Select @@IDENTITY"
 			};
 			command.Parameters.Add("ID_PhieuBanHang_H", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_PHIEUBANHANG_H);
 			if (ob.MAPHIEUBANHANG.Trim() == "")
@@ -444,6 +453,10 @@ namespace Bitas
 				command.Parameters.Add("ModifiedBy", SqlDbType.VarChar).Value  = DBNull.Value;
 			else
 				command.Parameters.Add("ModifiedBy", SqlDbType.VarChar).Value = ob.MODIFIEDBY;
+			if (ob.MADONHANG.Trim() == "")
+				command.Parameters.Add("MaDonHang", SqlDbType.VarChar).Value  = DBNull.Value;
+			else
+				command.Parameters.Add("MaDonHang", SqlDbType.VarChar).Value = ob.MADONHANG;
 			try
 			{
 				 num = Convert.ToInt32(command.ExecuteScalar());
@@ -473,70 +486,74 @@ namespace Bitas
 			SqlCommand command = new SqlCommand {
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Update POS_BanHang_H Set MaPhieuBanHang=@MaPhieuBanHang, ID_KiemKe=@ID_KiemKe, ID_CuaHang=@ID_CuaHang, ID_Kho=@ID_Kho, ID_NhaCC=@ID_NhaCC, ID_KhachHang=@ID_KhachHang, ID_LoaiXuat=@ID_LoaiXuat, NgayBanHang=@NgayBanHang, GhiChu=@GhiChu, PTGiamGia=@PTGiamGia, GiamGiaPT=@GiamGiaPT, GiamGiaCoDinh=@GiamGiaCoDinh, SoLuong=@SoLuong, ThanhTien=@ThanhTien, ThucThu=@ThucThu, TienVourcher=@TienVourcher, TongThanhToan=@TongThanhToan, MaKhuyenMai=@MaKhuyenMai, ID_TrangThaiPhieu=@ID_TrangThaiPhieu, ID_PTTT=@ID_PTTT, TienKhachTra=@TienKhachTra, CreatedTime=@CreatedTime, CreatedBy=@CreatedBy, ModifiedTime=@ModifiedTime, ModifiedBy=@ModifiedBy Where ID_PhieuBanHang_H=@ID_PhieuBanHang_H"
+				CommandText = @"Update POS_BanHang_H Set MaPhieuBanHang=@MaPhieuBanHang, ID_KiemKe=@ID_KiemKe, ID_CuaHang=@ID_CuaHang, ID_Kho=@ID_Kho, ID_NhaCC=@ID_NhaCC, ID_KhachHang=@ID_KhachHang, ID_LoaiXuat=@ID_LoaiXuat, NgayBanHang=@NgayBanHang, GhiChu=@GhiChu, PTGiamGia=@PTGiamGia, GiamGiaPT=@GiamGiaPT, GiamGiaCoDinh=@GiamGiaCoDinh, SoLuong=@SoLuong, ThanhTien=@ThanhTien, ThucThu=@ThucThu, TienVourcher=@TienVourcher, TongThanhToan=@TongThanhToan, MaKhuyenMai=@MaKhuyenMai, ID_TrangThaiPhieu=@ID_TrangThaiPhieu, ID_PTTT=@ID_PTTT, TienKhachTra=@TienKhachTra, CreatedTime=@CreatedTime, CreatedBy=@CreatedBy, ModifiedTime=@ModifiedTime, ModifiedBy=@ModifiedBy, MaDonHang=@MaDonHang Where ID_PhieuBanHang_H=@ID_PhieuBanHang_H"
 			};
 			command.Parameters.Add("ID_PhieuBanHang_H", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_PHIEUBANHANG_H);
-			if (ob.MAPHIEUBANHANG.Trim() == "")
-				command.Parameters.Add("MaPhieuBanHang", SqlDbType.VarChar).Value  = DBNull.Value;
-			else
-				command.Parameters.Add("MaPhieuBanHang", SqlDbType.VarChar).Value = ob.MAPHIEUBANHANG;
+            if (ob.MAPHIEUBANHANG.Trim() == "")
+                command.Parameters.Add("MaPhieuBanHang", SqlDbType.VarChar).Value = DBNull.Value;
+            else
+                command.Parameters.Add("MaPhieuBanHang", SqlDbType.VarChar).Value = ob.MAPHIEUBANHANG;
             if (ob.ID_KIEMKE == "")
                 command.Parameters.Add("ID_KiemKe", SqlDbType.UniqueIdentifier).Value = DBNull.Value;
             else
-			    command.Parameters.Add("ID_KiemKe", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_KIEMKE);
+                command.Parameters.Add("ID_KiemKe", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_KIEMKE);
             if (ob.ID_CUAHANG == 0)
                 command.Parameters.Add("ID_CuaHang", SqlDbType.Int).Value = DBNull.Value;
             else
                 command.Parameters.Add("ID_CuaHang", SqlDbType.Int).Value = ob.ID_CUAHANG;
-			command.Parameters.Add("ID_Kho", SqlDbType.Int).Value = ob.ID_KHO;
+            command.Parameters.Add("ID_Kho", SqlDbType.Int).Value = ob.ID_KHO;
             if (ob.ID_NHACC == 0)
                 command.Parameters.Add("ID_NhaCC", SqlDbType.Int).Value = DBNull.Value;
             else
-			    command.Parameters.Add("ID_NhaCC", SqlDbType.Int).Value = ob.ID_NHACC;
+                command.Parameters.Add("ID_NhaCC", SqlDbType.Int).Value = ob.ID_NHACC;
             if (ob.ID_KHACHHANG == "")
-			    command.Parameters.Add("ID_KhachHang", SqlDbType.UniqueIdentifier).Value = DBNull.Value;
-			else
+                command.Parameters.Add("ID_KhachHang", SqlDbType.UniqueIdentifier).Value = DBNull.Value;
+            else
                 command.Parameters.Add("ID_KhachHang", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_KHACHHANG);
             command.Parameters.Add("ID_LoaiXuat", SqlDbType.Int).Value = ob.ID_LOAIXUAT;
-			if (ob.NGAYBANHANG == DateTime.MinValue)
-				command.Parameters.Add("NgayBanHang", SqlDbType.DateTime).Value = DBNull.Value;
+            if (ob.NGAYBANHANG == DateTime.MinValue)
+                command.Parameters.Add("NgayBanHang", SqlDbType.DateTime).Value = DBNull.Value;
+            else
+                command.Parameters.Add("NgayBanHang", SqlDbType.DateTime).Value = ob.NGAYBANHANG;
+            if (ob.GHICHU.Trim() == "")
+                command.Parameters.Add("GhiChu", SqlDbType.NVarChar).Value = DBNull.Value;
+            else
+                command.Parameters.Add("GhiChu", SqlDbType.NVarChar).Value = ob.GHICHU;
+            command.Parameters.Add("PTGiamGia", SqlDbType.Float).Value = ob.PTGIAMGIA;
+            command.Parameters.Add("GiamGiaPT", SqlDbType.Money).Value = ob.GIAMGIAPT;
+            command.Parameters.Add("GiamGiaCoDinh", SqlDbType.Money).Value = ob.GIAMGIACODINH;
+            command.Parameters.Add("SoLuong", SqlDbType.Int).Value = ob.SOLUONG;
+            command.Parameters.Add("ThanhTien", SqlDbType.Money).Value = ob.THANHTIEN;
+            command.Parameters.Add("ThucThu", SqlDbType.Money).Value = ob.THUCTHU;
+            command.Parameters.Add("TienVourcher", SqlDbType.Money).Value = ob.TIENVOURCHER;
+            command.Parameters.Add("TongThanhToan", SqlDbType.Money).Value = ob.TONGTHANHTOAN;
+            if (ob.MAKHUYENMAI.Trim() == "")
+                command.Parameters.Add("MaKhuyenMai", SqlDbType.VarChar).Value = DBNull.Value;
+            else
+                command.Parameters.Add("MaKhuyenMai", SqlDbType.VarChar).Value = ob.MAKHUYENMAI;
+            command.Parameters.Add("ID_TrangThaiPhieu", SqlDbType.Int).Value = ob.ID_TRANGTHAIPHIEU;
+            command.Parameters.Add("ID_PTTT", SqlDbType.Int).Value = ob.ID_PTTT;
+            command.Parameters.Add("TienKhachTra", SqlDbType.Money).Value = ob.TIENKHACHTRA;
+            if (ob.CREATEDTIME == DateTime.MinValue)
+                command.Parameters.Add("CreatedTime", SqlDbType.DateTime).Value = DBNull.Value;
+            else
+                command.Parameters.Add("CreatedTime", SqlDbType.DateTime).Value = ob.CREATEDTIME;
+            if (ob.CREATEDBY.Trim() == "")
+                command.Parameters.Add("CreatedBy", SqlDbType.VarChar).Value = DBNull.Value;
+            else
+                command.Parameters.Add("CreatedBy", SqlDbType.VarChar).Value = ob.CREATEDBY;
+            if (ob.MODIFIEDTIME == DateTime.MinValue)
+                command.Parameters.Add("ModifiedTime", SqlDbType.DateTime).Value = DBNull.Value;
+            else
+                command.Parameters.Add("ModifiedTime", SqlDbType.DateTime).Value = ob.MODIFIEDTIME;
+            if (ob.MODIFIEDBY.Trim() == "")
+                command.Parameters.Add("ModifiedBy", SqlDbType.VarChar).Value = DBNull.Value;
+            else
+                command.Parameters.Add("ModifiedBy", SqlDbType.VarChar).Value = ob.MODIFIEDBY;
+			if (ob.MADONHANG.Trim() == "")
+				command.Parameters.Add("MaDonHang", SqlDbType.VarChar).Value  = DBNull.Value;
 			else
-				command.Parameters.Add("NgayBanHang", SqlDbType.DateTime).Value = ob.NGAYBANHANG;
-			if (ob.GHICHU.Trim() == "")
-				command.Parameters.Add("GhiChu", SqlDbType.NVarChar).Value  = DBNull.Value;
-			else
-				command.Parameters.Add("GhiChu", SqlDbType.NVarChar).Value = ob.GHICHU;
-			command.Parameters.Add("PTGiamGia", SqlDbType.Float).Value = ob.PTGIAMGIA;
-			command.Parameters.Add("GiamGiaPT", SqlDbType.Money).Value = ob.GIAMGIAPT;
-			command.Parameters.Add("GiamGiaCoDinh", SqlDbType.Money).Value = ob.GIAMGIACODINH;
-			command.Parameters.Add("SoLuong", SqlDbType.Int).Value = ob.SOLUONG;
-			command.Parameters.Add("ThanhTien", SqlDbType.Money).Value = ob.THANHTIEN;
-			command.Parameters.Add("ThucThu", SqlDbType.Money).Value = ob.THUCTHU;
-			command.Parameters.Add("TienVourcher", SqlDbType.Money).Value = ob.TIENVOURCHER;
-			command.Parameters.Add("TongThanhToan", SqlDbType.Money).Value = ob.TONGTHANHTOAN;
-			if (ob.MAKHUYENMAI.Trim() == "")
-				command.Parameters.Add("MaKhuyenMai", SqlDbType.VarChar).Value  = DBNull.Value;
-			else
-				command.Parameters.Add("MaKhuyenMai", SqlDbType.VarChar).Value = ob.MAKHUYENMAI;
-			command.Parameters.Add("ID_TrangThaiPhieu", SqlDbType.Int).Value = ob.ID_TRANGTHAIPHIEU;
-			command.Parameters.Add("ID_PTTT", SqlDbType.Int).Value = ob.ID_PTTT;
-			command.Parameters.Add("TienKhachTra", SqlDbType.Money).Value = ob.TIENKHACHTRA;
-			if (ob.CREATEDTIME == DateTime.MinValue)
-				command.Parameters.Add("CreatedTime", SqlDbType.DateTime).Value = DBNull.Value;
-			else
-				command.Parameters.Add("CreatedTime", SqlDbType.DateTime).Value = ob.CREATEDTIME;
-			if (ob.CREATEDBY.Trim() == "")
-				command.Parameters.Add("CreatedBy", SqlDbType.VarChar).Value  = DBNull.Value;
-			else
-				command.Parameters.Add("CreatedBy", SqlDbType.VarChar).Value = ob.CREATEDBY;
-			if (ob.MODIFIEDTIME == DateTime.MinValue)
-				command.Parameters.Add("ModifiedTime", SqlDbType.DateTime).Value = DBNull.Value;
-			else
-				command.Parameters.Add("ModifiedTime", SqlDbType.DateTime).Value = ob.MODIFIEDTIME;
-			if (ob.MODIFIEDBY.Trim() == "")
-				command.Parameters.Add("ModifiedBy", SqlDbType.VarChar).Value  = DBNull.Value;
-			else
-				command.Parameters.Add("ModifiedBy", SqlDbType.VarChar).Value = ob.MODIFIEDBY;
+				command.Parameters.Add("MaDonHang", SqlDbType.VarChar).Value = ob.MADONHANG;
 			try
 			{
 				command.ExecuteNonQuery();

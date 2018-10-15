@@ -9,7 +9,7 @@ namespace Bitas
 {
     public class KeysList_Phanquyen
     {
-        public Ob_Phanquyen _CheckQuyen(string Taikhoan, string Tenbang, SqlConnection conn)
+        public Ob_Phanquyen _CheckQuyen(string Taikhoan, string Tenbang, string MaChucNang, SqlConnection conn)
         {
             if(conn.State != ConnectionState.Open)
                 conn.Open();
@@ -19,8 +19,10 @@ namespace Bitas
                 Connection = conn,
                 CommandType = CommandType.Text,
                 CommandText = @"SELECT MoTa,Xem,ThemMoi,Sua,Xoa,XuatBaoCao
-                           FROM HT_PhanQuyenDuLieu a join HT_NguoiDung b on a.ID_NhomND = b.ID_NhomND
-                           WHERE TaiKhoan = '" + Taikhoan + "' and TenBang = '"+ Tenbang +"'"
+                           FROM HT_PhanQuyenDuLieu a 
+                           JOIN HT_NguoiDung b on a.ID_NhomND = b.ID_NhomND
+                           JOIN dbo.DM_ChucNang c ON c.ID_ChucNang = a.ID_ChucNang
+                           WHERE TaiKhoan = '" + Taikhoan + "' and TenBang = '" + Tenbang + "' AND c.MaChucNang = '" + MaChucNang + "'"
             };
             SqlDataReader reader = command.ExecuteReader();
             int num = 0;

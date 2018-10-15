@@ -7,11 +7,11 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data.SqlTypes;
 
-//CreateTimes : 13/09/2018 07:40:24.AM
+//CreateTimes : 13/09/2018 07:41:16.AM
 
 namespace Bitas
 {
-	public class KeysList_POS_DM_CuaHang
+	public class KeysList_POS_TonKhoKetChuyen
 	{
 		private Guid ConvertGuid(string b)
 		{
@@ -21,33 +21,34 @@ namespace Bitas
 			return gu;
 		}
 		//ListAll
-		public List<Ob_POS_DM_CuaHang> _ListAll(SqlConnection conn)
+		public List<Ob_POS_TonKhoKetChuyen> _ListAll(SqlConnection conn)
 		{
 			if (conn.ConnectionString == "")
 			{
 				return null;
 			}
 			conn.Open();
-			List<Ob_POS_DM_CuaHang> list = new List<Ob_POS_DM_CuaHang>();
+			List<Ob_POS_TonKhoKetChuyen> list = new List<Ob_POS_TonKhoKetChuyen>();
 			SqlCommand command = new SqlCommand
 			{
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Select ID_CuaHang, MaCuaHang, TenCuaHang, POS, ID_Kho, DiaChi, DienThoai, ID_CuaHangTruong, KetCa From POS_DM_CuaHang"
+				CommandText = @"Select ID_KetChuyen, ID_Kho, ID_Barcode, NgayKetChuyen, SLTon, ThanhTien, ModifiedTime, ModifiedBy, CreatedTime, CreatedBy From POS_TonKhoKetChuyen"
 			};
 			SqlDataReader reader = command.ExecuteReader();
 			while (reader.Read())
 			{
-				Ob_POS_DM_CuaHang ob = new Ob_POS_DM_CuaHang();
-				if(reader[0] != DBNull.Value){ ob.ID_CUAHANG = Convert.ToInt32(reader[0]);}
-				if(reader[1] != DBNull.Value){ ob.MACUAHANG = Convert.ToString(reader[1]);}
-				if(reader[2] != DBNull.Value){ ob.TENCUAHANG = Convert.ToString(reader[2]);}
-				if(reader[3] != DBNull.Value){ ob.POS = Convert.ToInt32(reader[3]);}
-				if(reader[4] != DBNull.Value){ ob.ID_KHO = Convert.ToInt32(reader[4]);}
-				if(reader[5] != DBNull.Value){ ob.DIACHI = Convert.ToString(reader[5]);}
-				if(reader[6] != DBNull.Value){ ob.DIENTHOAI = Convert.ToString(reader[6]);}
-				if(reader[7] != DBNull.Value){ ob.ID_CUAHANGTRUONG = Convert.ToInt32(reader[7]);}
-				if(reader[8] != DBNull.Value){ ob.KETCA = Convert.ToBoolean(reader[8]);}
+				Ob_POS_TonKhoKetChuyen ob = new Ob_POS_TonKhoKetChuyen();
+				if(reader[0] != DBNull.Value){ ob.ID_KETCHUYEN = Convert.ToString(reader[0]);}
+				if(reader[1] != DBNull.Value){ ob.ID_KHO = Convert.ToInt32(reader[1]);}
+				if(reader[2] != DBNull.Value){ ob.ID_BARCODE = Convert.ToInt64(reader[2]);}
+				if(reader[3] != DBNull.Value){ ob.NGAYKETCHUYEN = Convert.ToDateTime(reader[3]);}
+				if(reader[4] != DBNull.Value){ ob.SLTON = Convert.ToInt64(reader[4]);}
+				if(reader[5] != DBNull.Value){ ob.THANHTIEN = Convert.ToDouble(reader[5]);}
+				if(reader[6] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[6]);}
+				if(reader[7] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[7]);}
+				if(reader[8] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[8]);}
+				if(reader[9] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[9]);}
 				list.Add(ob);
 			}
 			command.Dispose();
@@ -58,14 +59,14 @@ namespace Bitas
 			return list;
 		}
 		//ListAll
-		public List<Ob_POS_DM_CuaHang> _ListAll_sp(string StoredName, SqlConnection conn)
+		public List<Ob_POS_TonKhoKetChuyen> _ListAll_sp(string StoredName, SqlConnection conn)
 		{
 			if (conn.ConnectionString == "")
 			{
 				return null;
 			}
 			conn.Open();
-			List<Ob_POS_DM_CuaHang> list = new List<Ob_POS_DM_CuaHang>();
+			List<Ob_POS_TonKhoKetChuyen> list = new List<Ob_POS_TonKhoKetChuyen>();
 			SqlCommand command = new SqlCommand
 			{
 				Connection = conn,
@@ -75,16 +76,17 @@ namespace Bitas
 			SqlDataReader reader = command.ExecuteReader();
 			while (reader.Read())
 			{
-				Ob_POS_DM_CuaHang ob = new Ob_POS_DM_CuaHang();
-				if(reader[0] != DBNull.Value){ ob.ID_CUAHANG = Convert.ToInt32(reader[0]);}
-				if(reader[1] != DBNull.Value){ ob.MACUAHANG = Convert.ToString(reader[1]);}
-				if(reader[2] != DBNull.Value){ ob.TENCUAHANG = Convert.ToString(reader[2]);}
-				if(reader[3] != DBNull.Value){ ob.POS = Convert.ToInt32(reader[3]);}
-				if(reader[4] != DBNull.Value){ ob.ID_KHO = Convert.ToInt32(reader[4]);}
-				if(reader[5] != DBNull.Value){ ob.DIACHI = Convert.ToString(reader[5]);}
-				if(reader[6] != DBNull.Value){ ob.DIENTHOAI = Convert.ToString(reader[6]);}
-				if(reader[7] != DBNull.Value){ ob.ID_CUAHANGTRUONG = Convert.ToInt32(reader[7]);}
-				if(reader[8] != DBNull.Value){ ob.KETCA = Convert.ToBoolean(reader[8]);}
+				Ob_POS_TonKhoKetChuyen ob = new Ob_POS_TonKhoKetChuyen();
+				if(reader[0] != DBNull.Value){ ob.ID_KETCHUYEN = Convert.ToString(reader[0]);}
+				if(reader[1] != DBNull.Value){ ob.ID_KHO = Convert.ToInt32(reader[1]);}
+				if(reader[2] != DBNull.Value){ ob.ID_BARCODE = Convert.ToInt64(reader[2]);}
+				if(reader[3] != DBNull.Value){ ob.NGAYKETCHUYEN = Convert.ToDateTime(reader[3]);}
+				if(reader[4] != DBNull.Value){ ob.SLTON = Convert.ToInt64(reader[4]);}
+				if(reader[5] != DBNull.Value){ ob.THANHTIEN = Convert.ToDouble(reader[5]);}
+				if(reader[6] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[6]);}
+				if(reader[7] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[7]);}
+				if(reader[8] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[8]);}
+				if(reader[9] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[9]);}
 				list.Add(ob);
 			}
 			command.Dispose();
@@ -95,33 +97,34 @@ namespace Bitas
 			return list;
 		}
 		//ListWhere
-		public List<Ob_POS_DM_CuaHang> _ListWhere(string keyword, SqlConnection conn)
+		public List<Ob_POS_TonKhoKetChuyen> _ListWhere(string keyword, SqlConnection conn)
 		{
 			if (conn.ConnectionString == "")
 			{
 				return null;
 			}
 			conn.Open();
-			List<Ob_POS_DM_CuaHang> list = new List<Ob_POS_DM_CuaHang>();
+			List<Ob_POS_TonKhoKetChuyen> list = new List<Ob_POS_TonKhoKetChuyen>();
 			SqlCommand command = new SqlCommand
 			{
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Select ID_CuaHang, MaCuaHang, TenCuaHang, POS, ID_Kho, DiaChi, DienThoai, ID_CuaHangTruong, KetCa From POS_DM_CuaHang Where "+ keyword +""
+				CommandText = @"Select ID_KetChuyen, ID_Kho, ID_Barcode, NgayKetChuyen, SLTon, ThanhTien, ModifiedTime, ModifiedBy, CreatedTime, CreatedBy From POS_TonKhoKetChuyen Where "+ keyword +""
 			};
 			SqlDataReader reader = command.ExecuteReader();
 			while (reader.Read())
 			{
-				Ob_POS_DM_CuaHang ob = new Ob_POS_DM_CuaHang();
-				if(reader[0] != DBNull.Value){ ob.ID_CUAHANG = Convert.ToInt32(reader[0]);}
-				if(reader[1] != DBNull.Value){ ob.MACUAHANG = Convert.ToString(reader[1]);}
-				if(reader[2] != DBNull.Value){ ob.TENCUAHANG = Convert.ToString(reader[2]);}
-				if(reader[3] != DBNull.Value){ ob.POS = Convert.ToInt32(reader[3]);}
-				if(reader[4] != DBNull.Value){ ob.ID_KHO = Convert.ToInt32(reader[4]);}
-				if(reader[5] != DBNull.Value){ ob.DIACHI = Convert.ToString(reader[5]);}
-				if(reader[6] != DBNull.Value){ ob.DIENTHOAI = Convert.ToString(reader[6]);}
-				if(reader[7] != DBNull.Value){ ob.ID_CUAHANGTRUONG = Convert.ToInt32(reader[7]);}
-				if(reader[8] != DBNull.Value){ ob.KETCA = Convert.ToBoolean(reader[8]);}
+				Ob_POS_TonKhoKetChuyen ob = new Ob_POS_TonKhoKetChuyen();
+				if(reader[0] != DBNull.Value){ ob.ID_KETCHUYEN = Convert.ToString(reader[0]);}
+				if(reader[1] != DBNull.Value){ ob.ID_KHO = Convert.ToInt32(reader[1]);}
+				if(reader[2] != DBNull.Value){ ob.ID_BARCODE = Convert.ToInt64(reader[2]);}
+				if(reader[3] != DBNull.Value){ ob.NGAYKETCHUYEN = Convert.ToDateTime(reader[3]);}
+				if(reader[4] != DBNull.Value){ ob.SLTON = Convert.ToInt64(reader[4]);}
+				if(reader[5] != DBNull.Value){ ob.THANHTIEN = Convert.ToDouble(reader[5]);}
+				if(reader[6] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[6]);}
+				if(reader[7] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[7]);}
+				if(reader[8] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[8]);}
+				if(reader[9] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[9]);}
 				list.Add(ob);
 			}
 			command.Dispose();
@@ -132,14 +135,14 @@ namespace Bitas
 			return list;
 		}
 		//ListWhere_sp
-		public List<Ob_POS_DM_CuaHang> _ListWhere_sp(string StoredName, SqlParameter[] ArrayParameter, SqlConnection conn)
+		public List<Ob_POS_TonKhoKetChuyen> _ListWhere_sp(string StoredName, SqlParameter[] ArrayParameter, SqlConnection conn)
 		{
 			if (conn.ConnectionString == "")
 			{
 				return null;
 			}
 			conn.Open();
-			List<Ob_POS_DM_CuaHang> list = new List<Ob_POS_DM_CuaHang>();
+			List<Ob_POS_TonKhoKetChuyen> list = new List<Ob_POS_TonKhoKetChuyen>();
 			SqlCommand command = new SqlCommand
 			{
 				Connection = conn,
@@ -150,16 +153,17 @@ namespace Bitas
 			SqlDataReader reader = command.ExecuteReader();
 			while (reader.Read())
 			{
-				Ob_POS_DM_CuaHang ob = new Ob_POS_DM_CuaHang();
-				if(reader[0] != DBNull.Value){ ob.ID_CUAHANG = Convert.ToInt32(reader[0]);}
-				if(reader[1] != DBNull.Value){ ob.MACUAHANG = Convert.ToString(reader[1]);}
-				if(reader[2] != DBNull.Value){ ob.TENCUAHANG = Convert.ToString(reader[2]);}
-				if(reader[3] != DBNull.Value){ ob.POS = Convert.ToInt32(reader[3]);}
-				if(reader[4] != DBNull.Value){ ob.ID_KHO = Convert.ToInt32(reader[4]);}
-				if(reader[5] != DBNull.Value){ ob.DIACHI = Convert.ToString(reader[5]);}
-				if(reader[6] != DBNull.Value){ ob.DIENTHOAI = Convert.ToString(reader[6]);}
-				if(reader[7] != DBNull.Value){ ob.ID_CUAHANGTRUONG = Convert.ToInt32(reader[7]);}
-				if(reader[8] != DBNull.Value){ ob.KETCA = Convert.ToBoolean(reader[8]);}
+				Ob_POS_TonKhoKetChuyen ob = new Ob_POS_TonKhoKetChuyen();
+				if(reader[0] != DBNull.Value){ ob.ID_KETCHUYEN = Convert.ToString(reader[0]);}
+				if(reader[1] != DBNull.Value){ ob.ID_KHO = Convert.ToInt32(reader[1]);}
+				if(reader[2] != DBNull.Value){ ob.ID_BARCODE = Convert.ToInt64(reader[2]);}
+				if(reader[3] != DBNull.Value){ ob.NGAYKETCHUYEN = Convert.ToDateTime(reader[3]);}
+				if(reader[4] != DBNull.Value){ ob.SLTON = Convert.ToInt64(reader[4]);}
+				if(reader[5] != DBNull.Value){ ob.THANHTIEN = Convert.ToDouble(reader[5]);}
+				if(reader[6] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[6]);}
+				if(reader[7] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[7]);}
+				if(reader[8] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[8]);}
+				if(reader[9] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[9]);}
 				list.Add(ob);
 			}
 			command.Dispose();
@@ -170,34 +174,35 @@ namespace Bitas
 			return list;
 		}
 		//GetObWhere
-		public Ob_POS_DM_CuaHang _GetObWhere(string keyword, SqlConnection conn)
+		public Ob_POS_TonKhoKetChuyen _GetObWhere(string keyword, SqlConnection conn)
 		{
 			if (conn.ConnectionString == "")
 			{
 				return null;
 			}
 			conn.Open();
-			Ob_POS_DM_CuaHang ob = new Ob_POS_DM_CuaHang();
+			Ob_POS_TonKhoKetChuyen ob = new Ob_POS_TonKhoKetChuyen();
 			SqlCommand command = new SqlCommand
 			{
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Select ID_CuaHang, MaCuaHang, TenCuaHang, POS, ID_Kho, DiaChi, DienThoai, ID_CuaHangTruong, KetCa From POS_DM_CuaHang Where "+ keyword +""
+				CommandText = @"Select ID_KetChuyen, ID_Kho, ID_Barcode, NgayKetChuyen, SLTon, ThanhTien, ModifiedTime, ModifiedBy, CreatedTime, CreatedBy From POS_TonKhoKetChuyen Where "+ keyword +""
 			};
 			SqlDataReader reader = command.ExecuteReader();
 			int num = 0;
 			while (reader.Read())
 			{
 				num++;
-				if(reader[0] != DBNull.Value){ ob.ID_CUAHANG = Convert.ToInt32(reader[0]);}
-				if(reader[1] != DBNull.Value){ ob.MACUAHANG = Convert.ToString(reader[1]);}
-				if(reader[2] != DBNull.Value){ ob.TENCUAHANG = Convert.ToString(reader[2]);}
-				if(reader[3] != DBNull.Value){ ob.POS = Convert.ToInt32(reader[3]);}
-				if(reader[4] != DBNull.Value){ ob.ID_KHO = Convert.ToInt32(reader[4]);}
-				if(reader[5] != DBNull.Value){ ob.DIACHI = Convert.ToString(reader[5]);}
-				if(reader[6] != DBNull.Value){ ob.DIENTHOAI = Convert.ToString(reader[6]);}
-				if(reader[7] != DBNull.Value){ ob.ID_CUAHANGTRUONG = Convert.ToInt32(reader[7]);}
-				if(reader[8] != DBNull.Value){ ob.KETCA = Convert.ToBoolean(reader[8]);}
+				if(reader[0] != DBNull.Value){ ob.ID_KETCHUYEN = Convert.ToString(reader[0]);}
+				if(reader[1] != DBNull.Value){ ob.ID_KHO = Convert.ToInt32(reader[1]);}
+				if(reader[2] != DBNull.Value){ ob.ID_BARCODE = Convert.ToInt64(reader[2]);}
+				if(reader[3] != DBNull.Value){ ob.NGAYKETCHUYEN = Convert.ToDateTime(reader[3]);}
+				if(reader[4] != DBNull.Value){ ob.SLTON = Convert.ToInt64(reader[4]);}
+				if(reader[5] != DBNull.Value){ ob.THANHTIEN = Convert.ToDouble(reader[5]);}
+				if(reader[6] != DBNull.Value){ ob.MODIFIEDTIME = Convert.ToDateTime(reader[6]);}
+				if(reader[7] != DBNull.Value){ ob.MODIFIEDBY = Convert.ToString(reader[7]);}
+				if(reader[8] != DBNull.Value){ ob.CREATEDTIME = Convert.ToDateTime(reader[8]);}
+				if(reader[9] != DBNull.Value){ ob.CREATEDBY = Convert.ToString(reader[9]);}
 			}
 			if (num == 0)
 			{
@@ -216,7 +221,7 @@ namespace Bitas
 			return ob;
 		}
 		//Insert ob
-		public bool _InsertOb(Ob_POS_DM_CuaHang ob, SqlConnection conn)
+		public bool _InsertOb(Ob_POS_TonKhoKetChuyen ob, SqlConnection conn)
 		{
 			if (conn.ConnectionString == "")
 			{
@@ -227,28 +232,33 @@ namespace Bitas
 			{
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Insert Into POS_DM_CuaHang (MaCuaHang, TenCuaHang, POS, ID_Kho, DiaChi, DienThoai, ID_CuaHangTruong, KetCa) Values(@MaCuaHang, @TenCuaHang, @POS, @ID_Kho, @DiaChi, @DienThoai, @ID_CuaHangTruong, @KetCa)"
+				CommandText = @"Insert Into POS_TonKhoKetChuyen (ID_KetChuyen, ID_Kho, ID_Barcode, NgayKetChuyen, SLTon, ThanhTien, ModifiedTime, ModifiedBy, CreatedTime, CreatedBy) Values(@ID_KetChuyen, @ID_Kho, @ID_Barcode, @NgayKetChuyen, @SLTon, @ThanhTien, @ModifiedTime, @ModifiedBy, @CreatedTime, @CreatedBy)"
 			};
-			if (ob.MACUAHANG.Trim() == "")
-				command.Parameters.Add("MaCuaHang", SqlDbType.VarChar).Value  = DBNull.Value;
-			else
-				command.Parameters.Add("MaCuaHang", SqlDbType.VarChar).Value = ob.MACUAHANG;
-			if (ob.TENCUAHANG.Trim() == "")
-				command.Parameters.Add("TenCuaHang", SqlDbType.NVarChar).Value  = DBNull.Value;
-			else
-				command.Parameters.Add("TenCuaHang", SqlDbType.NVarChar).Value = ob.TENCUAHANG;
-			command.Parameters.Add("POS", SqlDbType.Int).Value = ob.POS;
+			command.Parameters.Add("ID_KetChuyen", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_KETCHUYEN);
 			command.Parameters.Add("ID_Kho", SqlDbType.Int).Value = ob.ID_KHO;
-			if (ob.DIACHI.Trim() == "")
-				command.Parameters.Add("DiaChi", SqlDbType.NVarChar).Value  = DBNull.Value;
+			command.Parameters.Add("ID_Barcode", SqlDbType.BigInt).Value = ob.ID_BARCODE;
+			if (ob.NGAYKETCHUYEN == DateTime.MinValue)
+				command.Parameters.Add("NgayKetChuyen", SqlDbType.DateTime).Value = DBNull.Value;
 			else
-				command.Parameters.Add("DiaChi", SqlDbType.NVarChar).Value = ob.DIACHI;
-			if (ob.DIENTHOAI.Trim() == "")
-				command.Parameters.Add("DienThoai", SqlDbType.VarChar).Value  = DBNull.Value;
+				command.Parameters.Add("NgayKetChuyen", SqlDbType.DateTime).Value = ob.NGAYKETCHUYEN;
+			command.Parameters.Add("SLTon", SqlDbType.BigInt).Value = ob.SLTON;
+			command.Parameters.Add("ThanhTien", SqlDbType.Money).Value = ob.THANHTIEN;
+			if (ob.MODIFIEDTIME == DateTime.MinValue)
+				command.Parameters.Add("ModifiedTime", SqlDbType.DateTime).Value = DBNull.Value;
 			else
-				command.Parameters.Add("DienThoai", SqlDbType.VarChar).Value = ob.DIENTHOAI;
-			command.Parameters.Add("ID_CuaHangTruong", SqlDbType.Int).Value = ob.ID_CUAHANGTRUONG;
-			command.Parameters.Add("KetCa", SqlDbType.Bit).Value = ob.KETCA;
+				command.Parameters.Add("ModifiedTime", SqlDbType.DateTime).Value = ob.MODIFIEDTIME;
+			if (ob.MODIFIEDBY.Trim() == "")
+				command.Parameters.Add("ModifiedBy", SqlDbType.VarChar).Value  = DBNull.Value;
+			else
+				command.Parameters.Add("ModifiedBy", SqlDbType.VarChar).Value = ob.MODIFIEDBY;
+			if (ob.CREATEDTIME == DateTime.MinValue)
+				command.Parameters.Add("CreatedTime", SqlDbType.DateTime).Value = DBNull.Value;
+			else
+				command.Parameters.Add("CreatedTime", SqlDbType.DateTime).Value = ob.CREATEDTIME;
+			if (ob.CREATEDBY.Trim() == "")
+				command.Parameters.Add("CreatedBy", SqlDbType.VarChar).Value  = DBNull.Value;
+			else
+				command.Parameters.Add("CreatedBy", SqlDbType.VarChar).Value = ob.CREATEDBY;
 			try
 			{
 				command.ExecuteNonQuery();
@@ -267,7 +277,7 @@ namespace Bitas
 			return true;
 		}
 		//InsertobGetId
-		public int _InsertObGetId(Ob_POS_DM_CuaHang ob, SqlConnection conn)
+		public int _InsertObGetId(Ob_POS_TonKhoKetChuyen ob, SqlConnection conn)
 		{
 			int num = 0;
 			if (conn.ConnectionString != "")
@@ -277,28 +287,33 @@ namespace Bitas
 			{
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Insert Into POS_DM_CuaHang (MaCuaHang, TenCuaHang, POS, ID_Kho, DiaChi, DienThoai, ID_CuaHangTruong, KetCa) Values(@MaCuaHang, @TenCuaHang, @POS, @ID_Kho, @DiaChi, @DienThoai, @ID_CuaHangTruong, @KetCa)Select @@IDENTITY"
+				CommandText = @"Insert Into POS_TonKhoKetChuyen (ID_KetChuyen, ID_Kho, ID_Barcode, NgayKetChuyen, SLTon, ThanhTien, ModifiedTime, ModifiedBy, CreatedTime, CreatedBy) Values(@ID_KetChuyen, @ID_Kho, @ID_Barcode, @NgayKetChuyen, @SLTon, @ThanhTien, @ModifiedTime, @ModifiedBy, @CreatedTime, @CreatedBy)Select @@IDENTITY"
 			};
-			if (ob.MACUAHANG.Trim() == "")
-				command.Parameters.Add("MaCuaHang", SqlDbType.VarChar).Value  = DBNull.Value;
-			else
-				command.Parameters.Add("MaCuaHang", SqlDbType.VarChar).Value = ob.MACUAHANG;
-			if (ob.TENCUAHANG.Trim() == "")
-				command.Parameters.Add("TenCuaHang", SqlDbType.NVarChar).Value  = DBNull.Value;
-			else
-				command.Parameters.Add("TenCuaHang", SqlDbType.NVarChar).Value = ob.TENCUAHANG;
-			command.Parameters.Add("POS", SqlDbType.Int).Value = ob.POS;
+			command.Parameters.Add("ID_KetChuyen", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_KETCHUYEN);
 			command.Parameters.Add("ID_Kho", SqlDbType.Int).Value = ob.ID_KHO;
-			if (ob.DIACHI.Trim() == "")
-				command.Parameters.Add("DiaChi", SqlDbType.NVarChar).Value  = DBNull.Value;
+			command.Parameters.Add("ID_Barcode", SqlDbType.BigInt).Value = ob.ID_BARCODE;
+			if (ob.NGAYKETCHUYEN == DateTime.MinValue)
+				command.Parameters.Add("NgayKetChuyen", SqlDbType.DateTime).Value = DBNull.Value;
 			else
-				command.Parameters.Add("DiaChi", SqlDbType.NVarChar).Value = ob.DIACHI;
-			if (ob.DIENTHOAI.Trim() == "")
-				command.Parameters.Add("DienThoai", SqlDbType.VarChar).Value  = DBNull.Value;
+				command.Parameters.Add("NgayKetChuyen", SqlDbType.DateTime).Value = ob.NGAYKETCHUYEN;
+			command.Parameters.Add("SLTon", SqlDbType.BigInt).Value = ob.SLTON;
+			command.Parameters.Add("ThanhTien", SqlDbType.Money).Value = ob.THANHTIEN;
+			if (ob.MODIFIEDTIME == DateTime.MinValue)
+				command.Parameters.Add("ModifiedTime", SqlDbType.DateTime).Value = DBNull.Value;
 			else
-				command.Parameters.Add("DienThoai", SqlDbType.VarChar).Value = ob.DIENTHOAI;
-			command.Parameters.Add("ID_CuaHangTruong", SqlDbType.Int).Value = ob.ID_CUAHANGTRUONG;
-			command.Parameters.Add("KetCa", SqlDbType.Bit).Value = ob.KETCA;
+				command.Parameters.Add("ModifiedTime", SqlDbType.DateTime).Value = ob.MODIFIEDTIME;
+			if (ob.MODIFIEDBY.Trim() == "")
+				command.Parameters.Add("ModifiedBy", SqlDbType.VarChar).Value  = DBNull.Value;
+			else
+				command.Parameters.Add("ModifiedBy", SqlDbType.VarChar).Value = ob.MODIFIEDBY;
+			if (ob.CREATEDTIME == DateTime.MinValue)
+				command.Parameters.Add("CreatedTime", SqlDbType.DateTime).Value = DBNull.Value;
+			else
+				command.Parameters.Add("CreatedTime", SqlDbType.DateTime).Value = ob.CREATEDTIME;
+			if (ob.CREATEDBY.Trim() == "")
+				command.Parameters.Add("CreatedBy", SqlDbType.VarChar).Value  = DBNull.Value;
+			else
+				command.Parameters.Add("CreatedBy", SqlDbType.VarChar).Value = ob.CREATEDBY;
 			try
 			{
 				 num = Convert.ToInt32(command.ExecuteScalar());
@@ -318,7 +333,7 @@ namespace Bitas
 			return num;
 		}
 		//UpdateOb ob
-		public bool _UpdateOb(Ob_POS_DM_CuaHang ob, SqlConnection conn)
+		public bool _UpdateOb(Ob_POS_TonKhoKetChuyen ob, SqlConnection conn)
 		{
 			if (conn.ConnectionString == "")
 			{
@@ -328,29 +343,33 @@ namespace Bitas
 			SqlCommand command = new SqlCommand {
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Update POS_DM_CuaHang Set MaCuaHang=@MaCuaHang, TenCuaHang=@TenCuaHang, POS=@POS, ID_Kho=@ID_Kho, DiaChi=@DiaChi, DienThoai=@DienThoai, ID_CuaHangTruong=@ID_CuaHangTruong, KetCa=@KetCa Where ID_CuaHang=@ID_CuaHang"
+				CommandText = @"Update POS_TonKhoKetChuyen Set ID_Kho=@ID_Kho, ID_Barcode=@ID_Barcode, NgayKetChuyen=@NgayKetChuyen, SLTon=@SLTon, ThanhTien=@ThanhTien, ModifiedTime=@ModifiedTime, ModifiedBy=@ModifiedBy, CreatedTime=@CreatedTime, CreatedBy=@CreatedBy Where ID_KetChuyen=@ID_KetChuyen"
 			};
-			command.Parameters.Add("ID_CuaHang", SqlDbType.Int).Value = ob.ID_CUAHANG;
-			if (ob.MACUAHANG.Trim() == "")
-				command.Parameters.Add("MaCuaHang", SqlDbType.VarChar).Value  = DBNull.Value;
-			else
-				command.Parameters.Add("MaCuaHang", SqlDbType.VarChar).Value = ob.MACUAHANG;
-			if (ob.TENCUAHANG.Trim() == "")
-				command.Parameters.Add("TenCuaHang", SqlDbType.NVarChar).Value  = DBNull.Value;
-			else
-				command.Parameters.Add("TenCuaHang", SqlDbType.NVarChar).Value = ob.TENCUAHANG;
-			command.Parameters.Add("POS", SqlDbType.Int).Value = ob.POS;
+			command.Parameters.Add("ID_KetChuyen", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_KETCHUYEN);
 			command.Parameters.Add("ID_Kho", SqlDbType.Int).Value = ob.ID_KHO;
-			if (ob.DIACHI.Trim() == "")
-				command.Parameters.Add("DiaChi", SqlDbType.NVarChar).Value  = DBNull.Value;
+			command.Parameters.Add("ID_Barcode", SqlDbType.BigInt).Value = ob.ID_BARCODE;
+			if (ob.NGAYKETCHUYEN == DateTime.MinValue)
+				command.Parameters.Add("NgayKetChuyen", SqlDbType.DateTime).Value = DBNull.Value;
 			else
-				command.Parameters.Add("DiaChi", SqlDbType.NVarChar).Value = ob.DIACHI;
-			if (ob.DIENTHOAI.Trim() == "")
-				command.Parameters.Add("DienThoai", SqlDbType.VarChar).Value  = DBNull.Value;
+				command.Parameters.Add("NgayKetChuyen", SqlDbType.DateTime).Value = ob.NGAYKETCHUYEN;
+			command.Parameters.Add("SLTon", SqlDbType.BigInt).Value = ob.SLTON;
+			command.Parameters.Add("ThanhTien", SqlDbType.Money).Value = ob.THANHTIEN;
+			if (ob.MODIFIEDTIME == DateTime.MinValue)
+				command.Parameters.Add("ModifiedTime", SqlDbType.DateTime).Value = DBNull.Value;
 			else
-				command.Parameters.Add("DienThoai", SqlDbType.VarChar).Value = ob.DIENTHOAI;
-			command.Parameters.Add("ID_CuaHangTruong", SqlDbType.Int).Value = ob.ID_CUAHANGTRUONG;
-			command.Parameters.Add("KetCa", SqlDbType.Bit).Value = ob.KETCA;
+				command.Parameters.Add("ModifiedTime", SqlDbType.DateTime).Value = ob.MODIFIEDTIME;
+			if (ob.MODIFIEDBY.Trim() == "")
+				command.Parameters.Add("ModifiedBy", SqlDbType.VarChar).Value  = DBNull.Value;
+			else
+				command.Parameters.Add("ModifiedBy", SqlDbType.VarChar).Value = ob.MODIFIEDBY;
+			if (ob.CREATEDTIME == DateTime.MinValue)
+				command.Parameters.Add("CreatedTime", SqlDbType.DateTime).Value = DBNull.Value;
+			else
+				command.Parameters.Add("CreatedTime", SqlDbType.DateTime).Value = ob.CREATEDTIME;
+			if (ob.CREATEDBY.Trim() == "")
+				command.Parameters.Add("CreatedBy", SqlDbType.VarChar).Value  = DBNull.Value;
+			else
+				command.Parameters.Add("CreatedBy", SqlDbType.VarChar).Value = ob.CREATEDBY;
 			try
 			{
 				command.ExecuteNonQuery();
@@ -377,7 +396,7 @@ namespace Bitas
 			return true;
 		}
 		//DeleteOB
-		public bool _DeleteOb(Ob_POS_DM_CuaHang ob, SqlConnection conn)
+		public bool _DeleteOb(Ob_POS_TonKhoKetChuyen ob, SqlConnection conn)
 		{
 			if (conn.ConnectionString == "")
 			{
@@ -388,9 +407,9 @@ namespace Bitas
 			{
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = @"Delete From POS_DM_CuaHang Where ID_CuaHang=@ID_CuaHang"
+				CommandText = @"Delete From POS_TonKhoKetChuyen Where ID_KetChuyen=@ID_KetChuyen"
 			};
-				command.Parameters.Add(new SqlParameter("ID_CuaHang", ob.ID_CUAHANG));
+				command.Parameters.Add(new SqlParameter("ID_KetChuyen", ob.ID_KETCHUYEN));
 			try
 			{
 				command.ExecuteNonQuery();
@@ -420,7 +439,7 @@ namespace Bitas
 			{
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = "Delete From POS_DM_CuaHang Where " + condition
+				CommandText = "Delete From POS_TonKhoKetChuyen Where " + condition
 			};
 			try
 			{
@@ -451,7 +470,7 @@ namespace Bitas
 			{
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = "Select * From POS_DM_CuaHang Where " + condition
+				CommandText = "Select * From POS_TonKhoKetChuyen Where " + condition
 			};
 			try
 			{
@@ -497,7 +516,7 @@ namespace Bitas
 			SqlCommand command = new SqlCommand {
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = "Select Count(" + nameColumn + ") From POS_DM_CuaHang"
+				CommandText = "Select Count(" + nameColumn + ") From POS_TonKhoKetChuyen"
 			};
 			try
 			{
@@ -533,7 +552,7 @@ namespace Bitas
 			SqlCommand command = new SqlCommand {
 				Connection = conn,
 				CommandType = CommandType.Text,
-				CommandText = "Select Count(" + nameColumn + ") From POS_DM_CuaHang Where " + keyword +""
+				CommandText = "Select Count(" + nameColumn + ") From POS_TonKhoKetChuyen Where " + keyword +""
 			};
 			try
 			{
@@ -572,7 +591,7 @@ namespace Bitas
 				{
 					Connection = conn,
 					CommandType = CommandType.Text,
-					CommandText = "Select Min(" + nameColumn + ") From POS_DM_CuaHang"
+					CommandText = "Select Min(" + nameColumn + ") From POS_TonKhoKetChuyen"
 				};
 				try
 				{
@@ -612,7 +631,7 @@ namespace Bitas
 				{
 					Connection = conn,
 					CommandType = CommandType.Text,
-					CommandText = "Select Min(" + nameColumn + ") From POS_DM_CuaHang Where " + keyword +""
+					CommandText = "Select Min(" + nameColumn + ") From POS_TonKhoKetChuyen Where " + keyword +""
 				};
 				try
 				{
@@ -652,7 +671,7 @@ namespace Bitas
 				{
 					Connection = conn,
 					CommandType = CommandType.Text,
-					CommandText = "Select max(" + nameColumn + ") from POS_DM_CuaHang"
+					CommandText = "Select max(" + nameColumn + ") from POS_TonKhoKetChuyen"
 				};
 				try
 				{
@@ -692,7 +711,7 @@ namespace Bitas
 				{
 					Connection = conn,
 					CommandType = CommandType.Text,
-					CommandText = "Select Max(" + nameColumn + ") From POS_DM_CuaHang Where " + keyword +""
+					CommandText = "Select Max(" + nameColumn + ") From POS_TonKhoKetChuyen Where " + keyword +""
 				};
 				try
 				{
@@ -732,7 +751,7 @@ namespace Bitas
 				{
 					Connection = conn,
 					CommandType = CommandType.Text,
-					CommandText = "Select Sum(" + nameColumn + ") From POS_DM_CuaHang"
+					CommandText = "Select Sum(" + nameColumn + ") From POS_TonKhoKetChuyen"
 				};
 				try
 				{
@@ -772,7 +791,7 @@ namespace Bitas
 				{
 					Connection = conn,
 					CommandType = CommandType.Text,
-					CommandText = "Select Sum(" + nameColumn + ") From POS_DM_CuaHang Where " + keyword +""
+					CommandText = "Select Sum(" + nameColumn + ") From POS_TonKhoKetChuyen Where " + keyword +""
 				};
 				try
 				{
@@ -808,7 +827,7 @@ namespace Bitas
 				{
 					Connection = conn,
 					CommandType = CommandType.Text,
-					CommandText = "Select isnull(max(cast(substring(" + ColumnName + ",5,10) as decimal)),0) From POS_DM_CuaHang"
+					CommandText = "Select isnull(max(cast(substring(" + ColumnName + ",5,10) as decimal)),0) From POS_TonKhoKetChuyen"
 				};
 				SqlDataReader reader = command.ExecuteReader();
 				while (reader.Read())

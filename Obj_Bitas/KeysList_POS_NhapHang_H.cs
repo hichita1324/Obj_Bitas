@@ -418,7 +418,10 @@ namespace Bitas
 				command.Parameters.Add("MaPhieuNhapHang", SqlDbType.VarChar).Value  = DBNull.Value;
 			else
 				command.Parameters.Add("MaPhieuNhapHang", SqlDbType.VarChar).Value = ob.MAPHIEUNHAPHANG;
-			command.Parameters.Add("ID_Kiemke", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_KIEMKE);
+            if (ob.ID_KIEMKE == "")
+                command.Parameters.Add("ID_Kiemke", SqlDbType.UniqueIdentifier).Value = DBNull.Value;
+            else
+			    command.Parameters.Add("ID_Kiemke", SqlDbType.UniqueIdentifier).Value = new SqlGuid(ob.ID_KIEMKE);
 			command.Parameters.Add("ID_CuaHang", SqlDbType.Int).Value = ob.ID_CUAHANG;
 			command.Parameters.Add("ID_Kho", SqlDbType.Int).Value = ob.ID_KHO;
 			command.Parameters.Add("ID_KhoXuat", SqlDbType.Int).Value = ob.ID_KHOXUAT;
